@@ -3,20 +3,24 @@ let cl = console.log;
 // Product gallery image carousel
 let imageContainer = document.getElementById("images-container");
 
+for (let i = 1; i <= 7; i++) {
+  stickerImagesArray.push(`stkr-${i}`);
+}
+
 let stickerImagesArray = [
-  "../imgs/STKR - homeschool.png",
-  "../imgs/STKR - keep homeschool weird.png",
-  "../imgs/STKR - goat (circle).png",
-  "../imgs/STKR - home sweet homeschool.png",
-  "../imgs/STKR - homeschool mom.png",
-  "../imgs/STKR - I speak fluent sarcasm.png",
+  // "../imgs/sticker()",
+  // "../imgs/STKR - keep homeschool weird.png",
+  // "../imgs/STKR - goat (circle).png",
+  // "../imgs/STKR - home sweet homeschool.png",
+  // "../imgs/STKR - homeschool mom.png",
+  // "../imgs/STKR - I speak fluent sarcasm.png",
 ];
 
 function displayImages() {
   imageContainer.innerHTML = "";
   for (let i = 0; i < stickerImagesArray.length; i++) {
     if (i === 2) {
-      imageContainer.innerHTML += `<img class="make-main" src="${stickerImagesArray[i]}" alt="sticker">`;
+      imageContainer.innerHTML += `<img class="make-main" src="../imgs/sticker0imgs/${stickerImagesArray[i]}.png" alt="sticker">`;
     } else if (i === 3) {
       imageContainer.innerHTML += `<img class="to-be-main" src="${stickerImagesArray[i]}" alt="sticker">`;
     } else {
