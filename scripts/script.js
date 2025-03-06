@@ -3,10 +3,6 @@ let cl = console.log;
 // Product gallery image carousel
 let imageContainer = document.getElementById("images-container");
 
-for (let i = 1; i <= 7; i++) {
-  stickerImagesArray.push(`stkr-${i}`);
-}
-
 let stickerImagesArray = [
   // "../imgs/sticker()",
   // "../imgs/STKR - keep homeschool weird.png",
@@ -15,6 +11,10 @@ let stickerImagesArray = [
   // "../imgs/STKR - homeschool mom.png",
   // "../imgs/STKR - I speak fluent sarcasm.png",
 ];
+
+for (let i = 1; i <= 7; i++) {
+  stickerImagesArray.push(`stkr-${i}`);
+}
 
 function displayImages() {
   imageContainer.innerHTML = "";
