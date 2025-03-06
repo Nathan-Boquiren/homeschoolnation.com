@@ -20,7 +20,7 @@ function displayImages() {
   imageContainer.innerHTML = "";
   for (let i = 0; i < stickerImagesArray.length; i++) {
     if (i === 2) {
-      imageContainer.innerHTML += `<img class="make-main" src="../imgs/sticker0imgs/${stickerImagesArray[i]}.png" alt="sticker">`;
+      imageContainer.innerHTML += `<img class="make-main" src="../imgs/sticker-imgs/${stickerImagesArray[i]}.png" alt="sticker">`;
     } else if (i === 3) {
       imageContainer.innerHTML += `<img class="to-be-main" src="${stickerImagesArray[i]}" alt="sticker">`;
     } else {
