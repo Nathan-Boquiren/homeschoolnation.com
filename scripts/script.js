@@ -13,18 +13,18 @@ let stickerImagesArray = [
 ];
 
 for (let i = 1; i <= 7; i++) {
-  stickerImagesArray.push(`stkr-${i}`);
+  stickerImagesArray.push(`stkr-${i}.png`);
 }
 
 function displayImages() {
   imageContainer.innerHTML = "";
   for (let i = 0; i < stickerImagesArray.length; i++) {
     if (i === 2) {
-      imageContainer.innerHTML += `<img class="make-main" src="../imgs/sticker-imgs/${stickerImagesArray[i]}.png" alt="sticker">`;
+      imageContainer.innerHTML += `<img class="make-main" src="imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
     } else if (i === 3) {
-      imageContainer.innerHTML += `<img class="to-be-main" src="../imgs/sticker-imgs/${stickerImagesArray[i]}.png" alt="sticker">`;
+      imageContainer.innerHTML += `<img class="to-be-main" src="imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
     } else {
-      imageContainer.innerHTML += `<img src="../imgs/sticker-imgs/${stickerImagesArray[i]}.png" alt="sticker">`;
+      imageContainer.innerHTML += `<img src="imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
     }
   }
 }
