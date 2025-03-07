@@ -3,62 +3,113 @@ let cl = console.log;
 const gitHubLink = "https://nathan-boquiren.github.io/homeschoolnation.com";
 
 // Product gallery image carousel
-let imageContainer = document.getElementById("images-container");
+const imageContainer = document.getElementById("images-container");
 
-let stickerImagesArray = [
-  // "../imgs/sticker()",
-  // "../imgs/STKR - keep homeschool weird.png",
-  // "../imgs/STKR - goat (circle).png",
-  // "../imgs/STKR - home sweet homeschool.png",
-  // "../imgs/STKR - homeschool mom.png",
-  // "../imgs/STKR - I speak fluent sarcasm.png",
-];
+let arrows = document.querySelectorAll(".arrow");
+let imgs = [];
+let stickerImagesArray = [];
 
-for (let i = 1; i <= 7; i++) {
+for (let i = 3; i <= 7; i++) {
   stickerImagesArray.push(`stkr-${i}.png`);
 }
 
-function displayImages() {
-  imageContainer.innerHTML = "";
+function populateImages() {
+  imageContainer.innerHTML = `<span class="material-symbols-rounded arrow" id="prev">chevron_left</span>
+                <span class="material-symbols-rounded arrow" id="next">chevron_right</span>`;
   for (let i = 0; i < stickerImagesArray.length; i++) {
-    if (i === 2) {
-      imageContainer.innerHTML += `<img class="make-main" src="${gitHubLink}/imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
-    } else if (i === 3) {
-      imageContainer.innerHTML += `<img class="to-be-main" src="${gitHubLink}/imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
-    } else {
-      imageContainer.innerHTML += `<img src="${gitHubLink}/imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
-    }
+    imageContainer.innerHTML += `<img src="${gitHubLink}/imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker" class="stkr-img">`;
   }
-}
 
-displayImages();
-
-function updateCarousel() {
-  document.querySelectorAll("#images-container img").forEach((img) => {
-    if (img.classList.contains("make-main")) {
-      img.classList.remove("make-main");
-      img.classList.add("move");
-    } else if (img.classList.contains("to-be-main")) {
-      img.classList.remove("to-be-main");
-      img.classList.add("make-main");
-      img.classList.add("move-to-be-main");
-    } else {
-      img.classList.add("move");
-    }
+  imgs = document.querySelectorAll(".stkr-img");
+  arrows = document.querySelectorAll(".arrow");
+  arrows.forEach((arrow) => {
+    arrow.addEventListener("click", () => {
+      handleArrowClick(arrow.id);
+    });
   });
-  setTimeout(rotateArray, 500, stickerImagesArray);
+  styleImages(imgs);
 }
 
-setInterval(updateCarousel, 2000);
+populateImages();
 
-function rotateArray(arr) {
-  let firstElement = arr[0];
-  for (let i = 0; i < arr.length - 1; i++) {
-    arr[i] = arr[i + 1];
+function styleImages(imgs) {
+  let mainImgIndex = 2;
+  imgs[mainImgIndex].style.zIndex = 3;
+
+  for (let i = 0; i < imgs.length; i++) {
+    imgs[i].style.zIndex = `${3 - Math.abs(mainImgIndex - i)}`;
+    if (i < mainImgIndex) {
+      imgs[i].style.transform = `translateX(-${(mainImgIndex - i) * 50 + 50}%)`;
+      imgs[i].style.filter = "blur(5px) saturate(0.7)";
+    } else if (i > mainImgIndex) {
+      imgs[i].style.transform = `translateX(${(i - mainImgIndex) * 50 - 50}%)`;
+      imgs[i].style.filter = "blur(5px) saturate(0.7)";
+    }
   }
-  arr[arr.length - 1] = firstElement;
-  displayImages();
-  return arr;
+}
+
+// event listener for arrows
+
+let autoRotateImgs = setInterval(shiftImgsToRight, 2000);
+
+function handleArrowClick(action) {
+  clearInterval(autoRotateImgs);
+  if (action === "next") {
+    shiftImgsToRight();
+  } else if (action === "prev") {
+    shiftImgsToLeft();
+  }
+  autoRotateImgs = setInterval(shiftImgsToRight, 2000);
+}
+
+function shiftImgsToRight() {
+  for (let i = 0; i < imgs.length; i++) {
+    let mainImgIndex = 2;
+    imgs[mainImgIndex].style.transform = `translateX(-100%)`;
+    imgs[mainImgIndex].style.filter = `blur(5px) saturate(0.7)`;
+
+    if (i === mainImgIndex - 2) {
+      imgs[i].style.transform = "translateX(50%)";
+    } else if (i === mainImgIndex - 1) {
+      imgs[i].style.transform = `translateX(-150%)`;
+    } else if (i === mainImgIndex + 1) {
+      imgs[i].style.transform = "translateX(-50%)";
+      imgs[i].style.zIndex = "4";
+      imgs[i].style.filter = "blur(0) saturate(1)";
+    } else if (i === mainImgIndex + 2) {
+      imgs[i].style.transform = "translateX(0%)";
+      imgs[i].style.zIndex = "2";
+    }
+  }
+  setTimeout(() => {
+    stickerImagesArray.push(stickerImagesArray.shift());
+    populateImages();
+  }, 400);
+}
+
+function shiftImgsToLeft() {
+  for (let i = 0; i < imgs.length; i++) {
+    let mainImgIndex = 2;
+    imgs[mainImgIndex].style.transform = `translateX(0%)`;
+    imgs[mainImgIndex].style.filter = `blur(5px) saturate(0.7)`;
+
+    if (i === mainImgIndex - 2) {
+      imgs[i].style.transform = "translateX(-100%)";
+    } else if (i === mainImgIndex - 1) {
+      imgs[i].style.transform = `translateX(-50%)`;
+      imgs[i].style.zIndex = "4";
+      imgs[i].style.filter = "blur(0) saturate(1)";
+    } else if (i === mainImgIndex + 1) {
+      imgs[i].style.transform = "translateX(50%)";
+    } else if (i === mainImgIndex + 2) {
+      imgs[i].style.zIndex = "0";
+      imgs[i].style.transform = "translateX(-150%)";
+    }
+  }
+  setTimeout(() => {
+    stickerImagesArray.unshift(stickerImagesArray.pop());
+    populateImages();
+  }, 400);
 }
 
 // Intersection observer for animation on scroll

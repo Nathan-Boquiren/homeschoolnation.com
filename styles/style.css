@@ -513,6 +513,7 @@ section#leilani-art img {
 }
 
 /* Product Gallery Section */
+
 section#product-gallery {
     display: flex;
     flex-direction: column;
@@ -520,7 +521,7 @@ section#product-gallery {
     gap: 20px;
     height: 80vh;
     position: relative;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 section#product-gallery .headline {
@@ -536,33 +537,63 @@ section#product-gallery p {
 }
 
 #images-container {
-    display: flex;
-    width: 1500px;
+    width: clamp(300px, 100%, 1200px);
     overflow-x: hidden;
     height: 300px;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-bottom: 1rem;
+    position: relative;
+
 }
 
 #images-container img {
+    height: 100%;
+    width: auto;
     transition: all 0.5s ease;
-    scale: 0.8;
-    filter: saturate(0.5) brightness(0.8);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s ease;
 }
 
-.move {
-    transform: translateX(-124.666666666666666666667%);
+#images-container img::selection {
+    background-color: transparent;
 }
 
-.move-to-be-main {
-    transform: translateX(-100%);
+.arrow {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: var(--charcoal);
+    font-size: 2rem !important;
+    cursor: pointer;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 10px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
-#images-container img.make-main {
-    scale: 1;
-    filter: saturate(1) brightness(1);
+.arrow::selection {
+    background-color: transparent;
+}
+
+#next {
+    left: unset;
+    right: 5%;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.arrow:active {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width:768px) {
@@ -575,7 +606,11 @@ section#product-gallery p {
     }
 
     #images-container {
-        top: 40%;
+        height: 200px;
+    }
+
+    .arrow {
+        color: white;
     }
 }
 

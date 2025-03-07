@@ -12,17 +12,11 @@ document.getElementById("hamburger").addEventListener("click", function () {
     lineOne.style.transform = "rotate(0deg)";
     lineTwo.style.width = "30px";
     lineThree.style.transform = "rotate(0deg)";
-    lineOne.style.backgroundColor = "";
-    lineTwo.style.backgroundColor = "";
-    lineThree.style.backgroundColor = "";
   } else {
     navBar.style.left = "0";
     hamburger.style.transform = "rotate(-90deg)";
     lineOne.style.transform = "translateY(9px) rotate(45deg)";
     lineTwo.style.width = "0px";
     lineThree.style.transform = "translateY(-9px)rotate(-45deg)";
-    lineOne.style.backgroundColor = "white";
-    lineTwo.style.backgroundColor = "white";
-    lineThree.style.backgroundColor = "white";
   }
 });
