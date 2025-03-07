@@ -1,5 +1,7 @@
 let cl = console.log;
 
+const gitHubLink = "https://nathan-boquiren.github.io/homeschoolnation.com";
+
 // Product gallery image carousel
 let imageContainer = document.getElementById("images-container");
 
@@ -20,11 +22,11 @@ function displayImages() {
   imageContainer.innerHTML = "";
   for (let i = 0; i < stickerImagesArray.length; i++) {
     if (i === 2) {
-      imageContainer.innerHTML += `<img class="make-main" src="imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
+      imageContainer.innerHTML += `<img class="make-main" src="${gitHubLink}/imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
     } else if (i === 3) {
-      imageContainer.innerHTML += `<img class="to-be-main" src="imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
+      imageContainer.innerHTML += `<img class="to-be-main" src="${gitHubLink}/imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
     } else {
-      imageContainer.innerHTML += `<img src="imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
+      imageContainer.innerHTML += `<img src="${gitHubLink}/imgs/sticker-imgs/${stickerImagesArray[i]}" alt="sticker">`;
     }
   }
 }
