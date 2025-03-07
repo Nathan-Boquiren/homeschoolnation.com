@@ -49,7 +49,6 @@ function styleImages(imgs) {
 }
 
 // event listener for arrows
-
 let autoRotateImgs = setInterval(shiftImgsToRight, 2000);
 
 function handleArrowClick(action) {
@@ -113,6 +112,7 @@ function shiftImgsToLeft() {
 }
 
 // Intersection observer for animation on scroll
+
 document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
@@ -121,10 +121,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const observerCallback = (entries, observer) => {
-    entries.forEach((entry) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("animate-in");
-        entry.target.classList.remove("animate-out");
+        let delay = index * 200;
+        setTimeout(() => {
+          entry.target.classList.add("animate-in");
+          entry.target.classList.remove("animate-out");
+        }, delay);
       } else {
         entry.target.classList.add("animate-out");
         entry.target.classList.remove("animate-in");
@@ -134,11 +137,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  document
-    .querySelectorAll(".reason-card")
-    .forEach((element) => observer.observe(element));
+  document.querySelectorAll(".reason-card").forEach((element, index) => {
+    element.style.transitionDelay = `${index * 0.2}s`;
+    observer.observe(element);
+  });
 
-  document
-    .querySelectorAll(".testimonial-card")
-    .forEach((element) => observer.observe(element));
+  document.querySelectorAll(".testimonial-card").forEach((element, index) => {
+    element.style.transitionDelay = `${index * 0.2}s`;
+    observer.observe(element);
+  });
 });
