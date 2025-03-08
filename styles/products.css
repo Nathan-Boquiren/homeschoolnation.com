@@ -5,15 +5,16 @@ body {
 /* Products Header */
 
 #products-header {
-    background-color: var(--charcoal);
-    background-color: white;
+    background-color: #2a3741;
     height: 9.25rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* 
+
 #title {
-    color: var(--mustard-yellow) !important;
-} */
+    color: #009e9e !important;
+}
 
 h2 {
     font-family: "Chewy", "Poppins", Arial, Helvetica, sans-serif;
@@ -32,11 +33,6 @@ h2 {
     background-color: var(--mustard-yellow);
     border-radius: 100vmax;
 }
-
-.hamburger-line {
-    background-color: var(--mustard-yellow) !important;
-}
-
 
 /* Gallery */
 
@@ -150,10 +146,12 @@ h2 {
 /* Responsive Design */
 
 @media (max-width: 768px) {
+    #products-header {
+        height: 9.25rem;
+    }
 
     header {
         padding: 1rem;
-
     }
 
     #products-header {
