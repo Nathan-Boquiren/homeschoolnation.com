@@ -18,7 +18,7 @@ if (document.body.clientWidth <= 768) {
     card.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
-      cl("clicked");
+      // cl("clicked");
       const img = card.firstElementChild.src;
       productInfoImg.innerHTML = `<img class="lightbox-img" src='${img}' alt="product image">`;
       showInfoScreen();
@@ -72,11 +72,4 @@ window.addEventListener("scroll", () => {
     header.classList.remove("hidden");
   }
   lastScrollY = window.scrollY;
-});
-
-// disable browser image hover ui
-
-document.querySelectorAll("img").forEach((img) => {
-  img.setAttribute("draggable", false);
-  img.style.pointerEvents = "auto";
 });

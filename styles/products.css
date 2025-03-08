@@ -154,6 +154,12 @@ h2 {
     width: 80%;
 }
 
+/* footer */
+
+footer {
+    background-color: #2a3741;
+}
+
 /* Responsive Design */
 
 @media (max-width: 768px) {

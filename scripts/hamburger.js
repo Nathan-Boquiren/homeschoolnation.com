@@ -1,3 +1,7 @@
+console.log(
+  "This website was created by Nathan Boquiren. For your own personal website, or an online resume/cv, contact me at nathanjboquiren@gmail."
+);
+
 const navBar = document.querySelector(".navbar-links");
 const lineOne = document.querySelector(".line-1");
 const lineTwo = document.querySelector(".line-2");
