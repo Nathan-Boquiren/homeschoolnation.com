@@ -16,6 +16,7 @@ const closeBtn = document.querySelector(".close-btn");
 if (document.body.clientWidth <= 768) {
   productCards.forEach((card) => {
     card.addEventListener("click", (event) => {
+      event.preventDefault();
       event.stopPropagation();
       const img = card.firstElementChild.src;
       productInfoImg.innerHTML = `<img class="lightbox-img" src='${img}' alt="product image">`;
