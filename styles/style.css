@@ -21,6 +21,7 @@
 body {
     min-height: 150vh;
     background-color: var(--soft-white);
+    position: relative;
 }
 
 /* Header */
@@ -207,8 +208,6 @@ section#hero #hero-content {
         flex-direction: column;
         gap: 50px;
         transition: all 0.3s ease-out;
-        height: 100%;
-        width: 50vw;
         min-width: 180px;
         left: -65vw;
         top: 0;
@@ -216,6 +215,7 @@ section#hero #hero-content {
         background-color: var(--teal);
         height: 100vh;
         width: 40vw;
+        z-index: 500;
     }
 
     nav ul li:active {
@@ -413,6 +413,7 @@ section#features .sub-headline {
 @media (max-width: 1024px) {
     section#features .headline {
         font-size: 3rem;
+        z-index: -1;
     }
 
     section#features {
