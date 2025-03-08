@@ -18,6 +18,7 @@ if (document.body.clientWidth <= 768) {
     card.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
+      cl("clicked");
       const img = card.firstElementChild.src;
       productInfoImg.innerHTML = `<img class="lightbox-img" src='${img}' alt="product image">`;
       showInfoScreen();
