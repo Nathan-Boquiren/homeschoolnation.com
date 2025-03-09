@@ -20,6 +20,10 @@ header {
     color: #009e9e !important;
 }
 
+#title::after {
+    content: 'PRODUCTS' !important;
+}
+
 h2 {
     font-family: "Chewy", "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 400;

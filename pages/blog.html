@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/products.css">
-    <title>Products | Homeschool Nation</title>
+    <link rel="stylesheet" href="../styles/blog.css">
+    <title>Blog | Homeschool Nation</title>
 </head>
 
 <body>
-    <section id="products-header">
+
+    <section id="blog-header">
         <header>
             <h1 id="title">HOMESCHOOL NATION</h1>
             <nav>
                 <ul class="navbar-links">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#">Blog</a></li>
                     <!-- <li><a href="pages/about.html">About Us</a></li> -->
                     <!-- <li><a href="pages/homeschool-memes.html">Memes</a></li> -->
                 </ul>
@@ -33,24 +34,20 @@
 
     <main>
 
-        <h2>Product Gallery</h2>
-        <span class="yellow-line"></span>
-        <section id="product-gallery-container">
-            <!-- <div class="product-card">
-                <img src="" alt="product image">
-            </div> -->
-
-
-        </section>
-        <div id="product-info-screen">
-            <span class="close-btn">&times;</span>
-
-            <div id="product-img-wrapper"></div>
-            <div class="product-details-wrapper">
-                <h3 id="product-name"></h3>
-                <p id="product-price"></p>
+        <section id="article-list-container">
+            <div class="article-prev-card">
+                <div class="article-img"></div>
+                <h3 class="article-title"></h3>
             </div>
-        </div>
+        </section>
+
+        <section id="blog-article-container">
+            <div class="article-header">
+                <h2 id="article-title"></h2>
+            </div>
+
+            <div id="article-content"></div>
+        </section>
     </main>
 
     <footer>
@@ -67,8 +64,8 @@
     </footer>
 
 
-    <script src="../scripts/products.js"></script>
     <script src="../scripts/hamburger.js"></script>
+    <script src="../scripts/blog.js"></script>
 </body>
 
 </html>
