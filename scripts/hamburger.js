@@ -8,7 +8,7 @@ const lineTwo = document.querySelector(".line-2");
 const lineThree = document.querySelector(".line-3");
 const hamburger = document.getElementById("hamburger");
 
-hamburger.addEventListener("click", function () {
+hamburger.addEventListener("click", () => {
   if (navBar.style.left === "0px") {
     closeMenu();
   } else {
