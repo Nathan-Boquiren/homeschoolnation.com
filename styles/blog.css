@@ -136,9 +136,12 @@ header {
 }
 
 #article-title {
-    color: var(--mustard-yellow);
-    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
     margin-bottom: 1rem;
+    background-color: var(--mustard-yellow);
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 #article-content {
@@ -160,7 +163,12 @@ header {
 
 #article-content p {
     font-size: clamp(1rem, 3vw, 1.3rem);
-    line-height: 1.7;
+    line-height: 1.8;
+    color: var(--charcoal);
+}
+
+#article-content p strong {
+    font-family: var(--secondary-font);
     color: var(--charcoal);
 }
 
@@ -185,8 +193,6 @@ header {
     background-color: var(--mustard-yellow);
     color: white;
 }
-
-
 
 /* Fade Animations */
 
@@ -241,6 +247,10 @@ header {
 
     .blog-container-header {
         margin: 8rem auto 3rem;
+    }
+
+    #blog-article-container {
+        margin-top: 116px;
     }
 }
 
