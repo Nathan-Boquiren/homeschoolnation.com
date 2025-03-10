@@ -86,18 +86,58 @@ async function getArticle(title) {
 
 function populateBlogContainer(article) {
   document.title = article.title;
-  blogContainer.style.display = "flex";
-  mainBlogScreen.style.display = "none";
   blogTitleWrapper.innerHTML = article.title;
   article.content.forEach((section) => {
     blogContentWrapper.innerHTML += `
-        <h3>${section.section}</h3>
-        <p>${section.text}</p>`;
+        <h3 class="blog-section">${section.section}</h3>
+        <p class="blog-section">${section.text}</p>`;
   });
-  // blogContainer.classList.add("fade-in");
-  // setTimeout(() => {
-  //   blogContainer.classList.remove("fade-in");
-  // }, 300);
+
+  transitionPages();
+}
+
+// animate transition
+function transitionPages() {
+  mainBlogScreen.classList.add("fade-out");
+
+  setTimeout(() => {
+    mainBlogScreen.classList.remove("fade-out");
+    mainBlogScreen.style.display = "none";
+    blogContainer.style.display = "flex";
+
+    blogContainer.classList.add("fade-in");
+    let sections = document.querySelectorAll(".blog-section");
+    animateBlogPost(sections);
+  }, 300);
+}
+
+// animate blog post sections
+function animateBlogPost(sections) {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        let delay = index * 200;
+        setTimeout(() => {
+          entry.target.classList.add("animate-in");
+          entry.target.classList.remove("animate-out");
+          observer.unobserve(entry.target); // Stop observing after animation
+        }, delay);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  sections.forEach((element, index) => {
+    element.style.transitionDelay = `${index * 0.2}s`;
+    observer.observe(element);
+  });
 }
 
 // ===== Sticky scroll navbar =====
