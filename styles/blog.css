@@ -171,6 +171,19 @@ header {
 #return-btn {
     display: block;
     margin-left: auto;
+    background-color: transparent;
+    color: var(--mustard-yellow);
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: 2px solid var(--mustard-yellow);
+    padding: 10px 2rem;
+    border-radius: 100vmax;
+    cursor: pointer;
+}
+
+#return-btn:hover, #return-btn:active {
+    background-color: var(--mustard-yellow);
+    color: white;
 }
 
 

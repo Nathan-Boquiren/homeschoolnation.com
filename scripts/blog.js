@@ -7,6 +7,7 @@ const articleListContainer = document.getElementById("article-list-container");
 const blogContainer = document.getElementById("blog-article-container");
 const blogTitleWrapper = document.getElementById("article-title");
 const blogContentWrapper = document.getElementById("article-content");
+const returnBtn = document.getElementById("return-btn");
 
 // ===== Global variables =====
 
@@ -126,7 +127,7 @@ function animateBlogPost(sections) {
         setTimeout(() => {
           entry.target.classList.add("animate-in");
           entry.target.classList.remove("animate-out");
-          observer.unobserve(entry.target); // Stop observing after animation
+          observer.unobserve(entry.target);
         }, delay);
       }
     });
@@ -139,6 +140,11 @@ function animateBlogPost(sections) {
     observer.observe(element);
   });
 }
+
+// Return to blog posts btn
+returnBtn.addEventListener("click", () => {
+  window.location.reload();
+});
 
 // ===== Sticky scroll navbar =====
 let lastScrollY = window.scrollY;
