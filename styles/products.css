@@ -205,4 +205,8 @@ footer {
     #products-header {
         height: 100px;
     }
+
+    #title::after {
+        display: none;
+    }
 }

@@ -2,6 +2,7 @@ let cl = console.log;
 
 // ===== DOM Elements =====
 const header = document.getElementById("blog-header");
+const mainBlogScreen = document.getElementById("main-blog-screen");
 const articleListContainer = document.getElementById("article-list-container");
 const blogContainer = document.getElementById("blog-article-container");
 const blogTitleWrapper = document.getElementById("article-title");
@@ -31,10 +32,10 @@ function populateArticleCards(data) {
   data.forEach((article) => {
     articleListContainer.innerHTML += `
         <div class="article-prev-card">
-        <span class="line"></span>
-            <div class="article-img"></div>
-            <h3 class="article-title">${article.title}</h3>
-            <p class="prev-text">${article.preview_text}</p>
+          <span class="line"></span>
+          <h3 class="article-title">${article.title}</h3>
+          <p class="article-date">${article.date}</p>
+          <p class="prev-text">${article.preview_text}</p>
         </div>`;
   });
 
@@ -84,18 +85,19 @@ async function getArticle(title) {
 // populate full blog
 
 function populateBlogContainer(article) {
-  cl(article);
+  document.title = article.title;
   blogContainer.style.display = "flex";
+  mainBlogScreen.style.display = "none";
   blogTitleWrapper.innerHTML = article.title;
   article.content.forEach((section) => {
     blogContentWrapper.innerHTML += `
         <h3>${section.section}</h3>
         <p>${section.text}</p>`;
   });
-  blogContainer.classList.add("fade-in");
-  setTimeout(() => {
-    blogContainer.classList.remove("fade-in");
-  }, 300);
+  // blogContainer.classList.add("fade-in");
+  // setTimeout(() => {
+  //   blogContainer.classList.remove("fade-in");
+  // }, 300);
 }
 
 // ===== Sticky scroll navbar =====
