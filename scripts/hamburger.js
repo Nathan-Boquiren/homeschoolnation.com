@@ -70,3 +70,17 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(element);
   });
 });
+
+// Event listeners for contacting in footer
+
+const contactBtns = document.querySelectorAll(".contact-wrapper");
+
+contactBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.id === "email-link") {
+      window.location.href = "mailto:nathanjboquiren@gmail.com";
+    } else if (btn.id === "phone-link") {
+      window.location.href = "tel:+18438722917";
+    }
+  });
+});

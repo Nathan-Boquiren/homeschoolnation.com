@@ -22,7 +22,7 @@ header {
 /* blog lists container */
 
 .blog-container-header {
-    font-family: var(--secondary-font);
+    font-family: var(--accent-font);
     font-weight: 400;
     color: var(--teal);
     font-size: clamp(2rem, 4vw, 4rem);
