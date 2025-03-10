@@ -3,12 +3,11 @@ let cl = console.log;
 // ===== DOM Elements =====
 const header = document.getElementById("blog-header");
 const articleListContainer = document.getElementById("article-list-container");
-const articleContainer = document.getElementById("blog-article-container");
-const articleTitleWrapper = document.getElementById("article-title");
-const articleContentWrapper = document.getElementById("article-content");
+const blogContainer = document.getElementById("blog-article-container");
+const blogTitleWrapper = document.getElementById("article-title");
+const blogContentWrapper = document.getElementById("article-content");
 
 // ===== Global variables =====
-let articleTitles = [];
 
 // ===== Fetch blog articles =====
 
@@ -20,38 +19,83 @@ fetch("../articles/blog-articles.json")
     return response.json();
   })
   .then((data) => {
-    data.forEach((art) => {
-      //   cl(art.title);
-      articleTitles.push(art.title);
-    });
-
-    articleTitles = formatArticleTitles(articleTitles);
-    populateArticles(articleTitles);
+    populateArticleCards(data);
   })
   .catch((error) => {
     console.error("There was a problem fetching the articles:", error);
   });
 
-// format blog article titles
-function formatArticleTitles(titles) {
-  for (let i = 0; i < titles.length; i++) {
-    let newTitle = titles[i].replace(new RegExp("-", "g"), " ");
-    titles.splice(i, 1, newTitle);
-  }
-  return titles;
-}
-
 // populate articles
 
-function populateArticles(titles) {
-  cl(titles);
-  titles.forEach((title) => {
+function populateArticleCards(data) {
+  data.forEach((article) => {
     articleListContainer.innerHTML += `
         <div class="article-prev-card">
+        <span class="line"></span>
             <div class="article-img"></div>
-            <h3 class="article-title">${title}</h3>
+            <h3 class="article-title">${article.title}</h3>
+            <p class="prev-text">${article.preview_text}</p>
         </div>`;
   });
+
+  // add event listener
+  let articleCards = document.querySelectorAll(".article-prev-card");
+  articleCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      let articleTitle = card.querySelector(".article-title").innerHTML;
+      articleTitle = formatArticleTitle(articleTitle);
+      getArticle(articleTitle);
+    });
+  });
+}
+
+// format blog article titles
+function formatArticleTitle(title) {
+  return title
+    .replace(/\s+/g, "-")
+    .toLowerCase()
+    .replace(/[^\w-]/g, "");
+}
+
+// fetch full article
+
+async function fetchArticleData(title) {
+  try {
+    let response = await fetch(`../articles/${title}.json`);
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("There was a problem fetching the article:", error);
+    return null;
+  }
+}
+
+async function getArticle(title) {
+  let article = await fetchArticleData(title);
+  if (article) {
+    populateBlogContainer(article);
+  } else {
+    console.log("Failed to fetch article.");
+  }
+}
+
+// populate full blog
+
+function populateBlogContainer(article) {
+  cl(article);
+  blogContainer.style.display = "flex";
+  blogTitleWrapper.innerHTML = article.title;
+  article.content.forEach((section) => {
+    blogContentWrapper.innerHTML += `
+        <h3>${section.section}</h3>
+        <p>${section.text}</p>`;
+  });
+  blogContainer.classList.add("fade-in");
+  setTimeout(() => {
+    blogContainer.classList.remove("fade-in");
+  }, 300);
 }
 
 // ===== Sticky scroll navbar =====

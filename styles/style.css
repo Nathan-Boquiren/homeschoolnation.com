@@ -17,12 +17,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--main-font);
+    transition: all 0.2s ease;
 }
 
 body {
     min-height: 150vh;
     background-color: var(--soft-white);
     position: relative;
+}
+
+h2, h3, h4, p {
+    text-wrap: pretty;
 }
 
 /* Header */
@@ -63,7 +68,6 @@ nav ul {
 
 nav ul li {
     list-style: none;
-    transition: all 0.2s ease;
 }
 
 nav ul li:hover a {
@@ -74,7 +78,6 @@ nav ul li a {
     color: var(--soft-white);
     text-decoration: none;
     font-size: 1.5rem;
-    transition: all 0.2s ease;
 }
 
 .hamburger {
@@ -138,7 +141,6 @@ section#hero #hero-content {
     padding: 15px 50px;
     border-radius: 100vmax;
     cursor: pointer;
-    transition: all 0.2s ease;
     animation: fadeIn 1.8s ease forwards;
 }
 
@@ -618,7 +620,6 @@ section#product-gallery p {
 #images-container img {
     height: 100%;
     width: auto;
-    transition: all 0.5s ease;
     position: absolute;
     top: 0;
     left: 50%;
@@ -646,7 +647,6 @@ section#product-gallery p {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
 }
 
 .arrow::selection {
