@@ -22,7 +22,7 @@ header {
 /* blog lists container */
 
 .blog-container-header {
-    font-family: "Chewy", "Poppins", Arial, Helvetica, sans-serif;
+    font-family: var(--secondary-font);
     font-weight: 400;
     color: var(--teal);
     font-size: clamp(2rem, 4vw, 4rem);

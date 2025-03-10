@@ -25,7 +25,7 @@ header {
 }
 
 h2 {
-    font-family: "Chewy", "Poppins", Arial, Helvetica, sans-serif;
+    font-family: var(--accent-font);
     font-weight: 400;
     color: var(--mustard-yellow);
     font-size: clamp(2rem, 4vw, 5rem);
