@@ -252,6 +252,12 @@ header {
     #blog-article-container {
         margin-top: 116px;
     }
+
+    #return-btn {
+        font-size: 1rem;
+        padding: 5px 1rem;
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 368px) {
