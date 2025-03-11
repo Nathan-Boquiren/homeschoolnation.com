@@ -101,11 +101,11 @@ header {
 }
 
 .article-prev-card:hover::after, .article-prev-card:active::after {
-    animation: fillIn 0.3s ease forwards;
+    animation: fillIn 0.4s ease forwards;
 }
 
 .article-prev-card:hover::before, .article-prev-card:active::before {
-    animation: fillIn 0.4s ease forwards;
+    animation: fillIn 0.5s ease forwards;
 }
 
 @keyframes fillIn {
