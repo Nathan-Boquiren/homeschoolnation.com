@@ -26,9 +26,9 @@ function populateQuestions(categories) {
     category.forEach((pair) => {
       faqContainer.innerHTML += `
         <div class="faq-wrapper">
-            <div class="question-wrapper">
+            <div onclick="expandQuestion(this)" class="question-wrapper">
                 <h3 class="question-text">${pair.question}</h3>
-                <button onclick="expandQuestion(this)" class="expand-btn">
+                <button class="expand-btn">
                     <span class="material-symbols-rounded">keyboard_arrow_down</span>
                 </button>
             </div>
@@ -42,20 +42,32 @@ function populateQuestions(categories) {
 }
 
 // question expand btn event listener
-
 function expandQuestion(btn) {
-  let faqWrapper = btn.parentElement.parentElement;
-  let secondFaqWrapper = faqWrapper.nextElementSibling;
-  let expandBtn = faqWrapper.querySelector(".material-symbols-rounded");
-  let answerWrapper = faqWrapper.querySelector(".answer-wrapper");
-  if (expandBtn.innerHTML === "keyboard_arrow_down") {
-    expandBtn.innerHTML = "keyboard_arrow_up";
-  } else {
-    expandBtn.innerHTML = "keyboard_arrow_down";
-  }
+  let questionWrapper = btn;
+  let expandBtn = questionWrapper.querySelector(".material-symbols-rounded");
+  let answerWrapper = questionWrapper.nextElementSibling;
 
-  answerWrapper.classList.add("show-answer");
-  secondFaqWrapper.classList.add("move-wrapper-down");
+  document.querySelectorAll(".question-wrapper").forEach((wrapper) => {
+    if (
+      wrapper !== questionWrapper &&
+      wrapper.classList.contains("show-answer")
+    ) {
+      wrapper.classList.remove("show-answer");
+      wrapper.querySelector(".material-symbols-rounded").innerHTML =
+        "keyboard_arrow_down";
+      wrapper.nextElementSibling.style.maxHeight = "0px";
+    }
+  });
+
+  questionWrapper.classList.toggle("show-answer");
+
+  if (!questionWrapper.classList.contains("show-answer")) {
+    expandBtn.innerHTML = "keyboard_arrow_down";
+    answerWrapper.style.maxHeight = "0px";
+  } else {
+    expandBtn.innerHTML = "keyboard_arrow_up";
+    answerWrapper.style.maxHeight = `${answerWrapper.scrollHeight}px`;
+  }
 }
 
 // ===== Sticky scroll navbar =====
