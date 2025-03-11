@@ -1,0 +1,114 @@
+{
+    "product_related_questions": [
+        {
+        "question": "What does FAQ stand for?",
+        "answer": "You must be a homeschooler."
+        },
+        {
+            "question": "What materials are your stickers made from?",
+            "answer": "The stickers are made from matte vinyl sticker paper, and an extra layer of lamination paper, designed for durability and a smooth finish."
+        },
+        {
+            "question": "Are your stickers waterproof?",
+            "answer": "Yes, the stickers are water-resistant, meaning they can handle light exposure to water, but it's recommended to avoid soaking them."
+        },
+        {
+            "question": "Can I use your stickers on my laptop or water bottle?",
+            "answer": "Absolutely! These stickers are perfect for personalizing laptops, water bottles, notebooks, and other personal items. However, for the best results, make sure that the surface of the item is smooth and clean before applying the sticker."
+        },
+        {
+            "question": "Are the stickers removable?",
+            "answer": "Yes, the stickers are removable, but it’s best to peel them off gently to avoid damaging the surface."
+        },
+        {
+            "question": "How big are your stickers?",
+            "answer": "Majority of our stickers are 2.5 inches on their longest end, while some are 2.7 inches."
+        },
+        {
+            "question": "Do you offer custom sticker designs?",
+            "answer": "Currently, custom sticker designs are not offered, but you can reach out for inquiries about personalized designs in the future."
+        },
+        {
+            "question": "How durable are the stickers?",
+            "answer": "The stickers are quite durable and are designed to last for a long time when applied to smooth, clean surfaces. They’re resistant to everyday wear and tear."
+        },
+        {
+            "question": "Are the stickers UV resistant?",
+            "answer": "While the stickers are made to last, they may not be fully UV resistant, so prolonged exposure to sunlight may cause fading over time. However, they're still durable for everyday use :)"
+        },
+        {
+            "question": "Do you offer sticker packs or bundles?",
+            "answer": "Yes! We offer the following: $5 for 3 stickers, $8 for 5 stickers, and $15 for 10 stickers."
+        }
+    ],
+    "order_related_questions": [
+        {
+            "question": "How can I place an order for stickers?",
+            "answer": "Orders can be placed by contacting me directly, as I don't have an online shop yet. You can discuss the available designs and quantities via email, text or other communication methods."
+        },
+        {
+            "question": "Can I add items to my order after purchasing?",
+            "answer": "Since orders are placed manually, it’s best to contact you immediately if changes are needed. You can make adjustments before the order is shipped."
+        },
+        {
+            "question": "Do you offer gift wrapping or custom packaging?",
+            "answer": "No."
+        },
+        {
+            "question": "Do you have a minimum order requirement?",
+            "answer": "Like, 1 sticker."
+        },
+        {
+            "question": "Can I order stickers in bulk?",
+            "answer": "Yeah, but you might not get it lol."
+        }
+    ],
+    "post_purchase_questions": [
+        {
+            "question": "How do I care for my stickers to make them last longer?",
+            "answer": "To care for your stickers, avoid exposure to water for long periods, and ensure the surface they are applied to is clean and smooth. For best results, avoid peeling and reapplying them too many times."
+        },
+        {
+            "question": "What should I do if my order is damaged upon arrival?",
+            "answer": "If your stickers are damaged upon arrival, please contact me immediately, and we can discuss a replacement or refund."
+        },
+        {
+            "question": "Can I return or exchange my stickers?",
+            "answer": "Why would you?"
+        },
+        {
+            "question": "What if I received the wrong sticker or product?",
+            "answer": "If you receive the wrong sticker or product, please contact me right away, and I will make sure to correct the mistake."
+        },
+        {
+            "question": "Do you offer refunds if I’m not satisfied with my purchase?",
+            "answer": "Trust me, buddy. You'll be satisfied."
+        },
+        {
+            "question": "How do I clean the surface before applying the sticker?",
+            "answer": "Clean the surface with a soft cloth or wipe to ensure it’s free of dust, dirt, and oil before applying the sticker for the best adhesion."
+        },
+        {
+            "question": "Can I reuse your stickers once I’ve applied them?",
+            "answer": "Reusing the stickers once they’ve been applied is not recommended, as they may lose their adhesive properties after being removed."
+        }
+    ],
+    "business_and_shipping_policies": [
+        {
+            "question": "What is your return/exchange policy?",
+            "answer": "I don't have one lol."
+        },
+        {
+            "question": "Do you offer free shipping?",
+            "answer": "Hahaha. That's funny"
+        },
+        {
+            "question": "Do you have any special discounts or promotions?",
+            "answer": "People with a mental disability (such as Down Syndrome) get 50% off their purchase."
+        },
+        {
+            "question": "Do you offer gift cards?",
+            "answer": "No, why would I?"
+        }
+    ]
+}
