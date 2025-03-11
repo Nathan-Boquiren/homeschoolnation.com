@@ -65,10 +65,10 @@ const header = document.getElementById("products-header");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > lastScrollY) {
-    // Scrolling down, hide navbar
     header.classList.add("hidden");
+  } else if (window.scrollY === 0) {
+    header.classList.remove("hidden");
   } else {
-    // Scrolling up, show navbar
     header.classList.remove("hidden");
   }
   lastScrollY = window.scrollY;
