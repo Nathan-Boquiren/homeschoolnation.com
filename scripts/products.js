@@ -2,7 +2,7 @@ let cl = console.log;
 
 const gallery = document.getElementById("product-gallery-container");
 
-for (let i = 1; i <= 23; i++) {
+for (let i = 1; i <= 21; i++) {
   gallery.innerHTML += `<div class="product-card to-animate">
     <img src='../imgs/product-imgs/product-img(${i}).png' alt="product image">
 </div>`;
