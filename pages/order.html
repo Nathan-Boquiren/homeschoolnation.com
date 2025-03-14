@@ -45,60 +45,88 @@
             <ol class="order-steps">
                 <li class="order-step">
                     <h3>Browse the Collection</h3>
-                    <p>Explore the various designs available for purchase in the <strong>Products</strong> section
-                        of our website. If you have any questions about a design or want to see more options, feel
-                        free to reach out!</p>
+                    <p>Browse our <strong>Products</strong> page to find the designs you’d like to purchase.
+                        <strong>Take note the names and/or ID numbers of your chosen designs</strong>. If you have any
+                        questions, feel free to reach out!
+                    </p>
                 </li>
                 <li class="order-step">
                     <h3>Place Your Order</h3>
-                    <p>Click on the link below to fill out a <strong>Google Form</strong> with your order details
-                        (specific stickers, quantities, and any customization requests). Be sure to include your
-                        <strong>name</strong>, <strong>contact information</strong> (email or phone number), and
-                        <strong>delivery instructions</strong>.
+                    <p>Fill out the order form below with your sticker selections, quantities, and any customizations.
                     </p>
-                    <a href="[Google Form Link]" class="order-form-link">Fill Out Order Form</a>
+
+
+                    <form
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSfrHo6zKwykOLr9eRRJKwbRkbRBCpyis_xFo8q6ya6coA3RRw/formResponse"
+                        id="order-form">
+
+                        <h4>Order Form</h4>
+
+                        <div class="input-wrapper name-wrapper">
+                            <label for="entry.564625978">Full Name</label>
+                            <input type="text" name="entry.564625978" id="name-input" autocomplete="off" required>
+                        </div>
+
+                        <div class="input-wrapper email-wrapper">
+                            <label for="entry.871389514">Email Address</label>
+                            <input type="email" name="entry.871389514" id="email-input" autocomplete="off" required>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="entry.1110742363">Phone (Optional)</label>
+                            <input type="tel" name="entry.1110742363" id="phone-input" autocomplete="off"
+                                maxlength="12">
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="entry.387382129">Stickers and Quantities</label>
+                            <textarea name="entry.387382129" id="stickers-input" autocomplete="off" required></textarea>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="entry.739197218">Notes (Optional)</label>
+                            <!-- <input type="text" name="entry.739197218" id="notes-input" autocomplete="off"> -->
+                            <textarea name="entry.739197218" autocomplete="off"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit Form</button>
+                    </form>
+
+
                 </li>
                 <li class="order-step">
                     <h3>Payment</h3>
-                    <p>Once I’ve received your order, I’ll reach out to confirm and provide payment details. Payment
-                        will be accepted via <strong>cash</strong>.</p>
+                    <p>Once I’ve received your order, I’ll reach out to confirm and provide payment details.
+                        <strong>Payment will be accepted via cash</strong>.
+                    </p>
                 </li>
                 <li class="order-step">
                     <h3>Receive Your Stickers</h3>
-                    <p>Once payment is received or arranged, I will coordinate with you to meet at school or, if needed,
-                        mail your stickers to ensure you receive your order.</p>
+                    <p>Once payment is confirmed, I'll arrange to meet you at school or, if necessary, mail your
+                        stickers to complete your order.</p>
                 </li>
             </ol>
 
-            <!-- </section> -->
-
-
-
         </section>
 
-        <h2 class="contact-header">Contact Me</h2>
-        <p class="contact-p">If you have any questions or need help, you can contact me through any of the following
-            methods.</p>
-        <ul class="contact-methods">
-            <li>
-                <span class="material-symbols-rounded">email</span>
-                <!-- <h3>Email:</h3> -->
-                <a href="mailto:nathanjboquiren@gmail.com" class="contact-link">nathanjboquiren@gmail.com</a>
-            </li>
+        <section class="contact-section">
 
-            <li>
-                <span class="material-symbols-rounded">phone</span>
-                <!-- <h3>Text:</h3> -->
-                <a href="tel:+18438722917" class="contact-link">+1 (843) 872 2917</a>
-            </li>
-        </ul>
-        <p class="contact-p">Or, fill out the order form:</p>
-        <a href="[Google Form Link]" class="order-form-link last-order-link">Order Form</a>
+            <h2 class="contact-header">Need Help? Contact Me!</h2>
+            <p class="contact-p">If you have any questions, you can reach me through:</p>
 
-
+            <ul class="contact-methods">
+                <li>
+                    <span class="material-symbols-rounded">email</span>
+                    <a href="mailto:nathanjboquiren@gmail.com" class="contact-link">nathanjboquiren@gmail.com</a>
+                </li>
+                <li>
+                    <span class="material-symbols-rounded">phone</span>
+                    <a href="tel:+18438722917" class="contact-link">+1 (843) 872 2917</a>
+                </li>
+            </ul>
+        </section>
 
     </main>
-
 
     <footer>
         <div class="footer-content">

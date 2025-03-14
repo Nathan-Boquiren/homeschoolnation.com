@@ -33,7 +33,7 @@ h2 {
 /* Order process list */
 
 .order-section {
-    margin: 0 15% 3rem;
+    margin: 0 20% 3rem;
 }
 
 .order-steps {
@@ -79,10 +79,6 @@ h2 {
     left: -1.5rem;
 }
 
-.order-step:hover {
-    background-color: #f0f0f0;
-}
-
 h3 {
     color: var(--teal);
     font-size: clamp(1.3rem, 3vw, 1.8rem);
@@ -102,23 +98,101 @@ h3 {
     color: var(--teal);
 }
 
-.order-form-link {
-    display: block;
-    width: fit-content;
-    font-family: var(--secondary-font);
-    text-decoration: none;
-    color: var(--mustard-yellow);
-    font-weight: 600;
-    border: 3px solid var(--mustard-yellow);
-    padding: 10px 1.5rem;
-    border-radius: 100vmax;
-    margin-top: 1.5rem;
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
+/* Order Form */
+
+#order-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var(--mustard-yellow);
+    max-width: 50rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    position: relative;
 }
 
-.order-form-link:hover {
-    background-color: var(--mustard-yellow);
+#order-form h4 {
     color: white;
+    text-align: center;
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+    width: 100%;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    backdrop-filter: blur(10px);
+}
+
+
+.input-wrapper label {
+    font-family: var(--secondary-font);
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: text;
+    z-index: 1;
+}
+
+.input-wrapper:focus-within label, .input-wrapper.filled label {
+    color: white;
+    top: 0;
+    background-color: var(--mustard-yellow);
+    padding: 0 5px;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-weight: 600;
+}
+
+.input-wrapper input, .input-wrapper textarea {
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-family: var(--secondary-font);
+    padding: 10px 1rem;
+    color: white;
+    background-color: transparent;
+}
+
+.input-wrapper:focus-within input, .input-wrapper:focus-within textarea {
+    border-color: white;
+    outline: none;
+}
+
+.input-wrapper textarea {
+    resize: none;
+    max-height: 10rem;
+    field-sizing: content;
+}
+
+.submit-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-family: var(--secondary-font);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    border-radius: 100vmax;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: white;
+    color: var(--mustard-yellow);
+    font-weight: 600;
 }
 
 /* Contact info section */
@@ -210,12 +284,27 @@ h3 {
         margin: 0 10% 3rem;
     }
 
-    .order-step::before {
+    .order-step::before, .order-step::after {
         display: none;
     }
 
-    .order-step a {
-        margin: 2rem auto 0;
+    #order-form {
+        padding: 1rem 0;
+    }
+
+    #order-form::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 85vw;
+        border-radius: 1rem;
+        background-color: var(--mustard-yellow);
+    }
+
+    .input-wrapper input {
+        padding: 6px 8px;
     }
 
     .contact-methods {
