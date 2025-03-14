@@ -4,7 +4,7 @@ let cl = console.log;
 const header = document.getElementById("order-header");
 const orderForm = document.getElementById("order-form");
 const labels = document.querySelectorAll("label");
-const inputs = document.querySelectorAll("input");
+const inputs = document.querySelectorAll(".form-input");
 const phoneInput = document.getElementById("phone-input");
 
 // Order Form
