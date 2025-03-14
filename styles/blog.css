@@ -28,7 +28,6 @@ header {
     font-size: clamp(2rem, 4vw, 4rem);
     text-align: center;
     margin: 3rem auto;
-
 }
 
 #article-list-container {
@@ -193,9 +192,6 @@ header {
     background-color: var(--mustard-yellow);
     color: white;
 }
-
-
-
 
 /* Fade Animations */
 

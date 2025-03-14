@@ -9,8 +9,6 @@ const blogTitleWrapper = document.getElementById("article-title");
 const blogContentWrapper = document.getElementById("article-content");
 const returnBtn = document.getElementById("return-btn");
 
-// ===== Global variables =====
-
 // ===== Fetch blog articles =====
 
 fetch("../articles/blog-articles.json")

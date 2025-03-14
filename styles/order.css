@@ -1,0 +1,241 @@
+body {
+    min-height: unset;
+}
+
+/* header */
+
+#order-header {
+    background-color: #2a3741;
+    height: 6rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    padding: 1.5rem;
+}
+
+#title::after {
+    content: 'ORDER' !important;
+}
+
+/* header */
+
+h2 {
+    font-family: var(--accent-font);
+    font-weight: 400;
+    color: var(--teal);
+    font-size: clamp(2rem, 4vw, 4rem);
+    text-align: center;
+    margin: 3rem auto;
+}
+
+/* Order process list */
+
+.order-section {
+    margin: 0 15% 3rem;
+}
+
+.order-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style-type: none;
+    counter-reset: step-counter;
+}
+
+.order-step {
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    color: var(--teal);
+    position: relative;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.order-step::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: -5.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: var(--mustard-yellow);
+    padding: 5px 1.2rem;
+    border-radius: 10px;
+    aspect-ratio: 1;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+}
+
+.order-step::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background-color: var(--mustard-yellow);
+    border-radius: 100vmax;
+    top: 0;
+    left: -1.5rem;
+}
+
+.order-step:hover {
+    background-color: #f0f0f0;
+}
+
+h3 {
+    color: var(--teal);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    text-wrap: balance;
+}
+
+.order-step p, .contact-p {
+    font-family: var(--secondary-font);
+    color: var(--charcoal);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.8;
+    text-wrap: pretty;
+}
+
+.order-step p strong {
+    font-weight: 600;
+    color: var(--teal);
+}
+
+.order-form-link {
+    display: block;
+    width: fit-content;
+    font-family: var(--secondary-font);
+    text-decoration: none;
+    color: var(--mustard-yellow);
+    font-weight: 600;
+    border: 3px solid var(--mustard-yellow);
+    padding: 10px 1.5rem;
+    border-radius: 100vmax;
+    margin-top: 1.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+.order-form-link:hover {
+    background-color: var(--mustard-yellow);
+    color: white;
+}
+
+/* Contact info section */
+
+.contact-p {
+    margin-bottom: 1rem;
+    text-align: center;
+    margin: 0 15% 1.5rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 3px solid var(--teal);
+    border-radius: 2rem;
+    width: fit-content;
+    margin: 0 auto 2rem;
+    padding: 1rem 5rem;
+}
+
+.contact-methods li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+.contact-methods li .material-symbols-rounded {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--teal);
+}
+
+.contact-methods li .material-symbols-rounded::selection {
+    background-color: transparent;
+}
+
+.contact-methods li h3 {
+    color: var(--mustard-yellow);
+}
+
+.contact-methods li a {
+    text-decoration: none;
+    color: var(--teal);
+    font-weight: 600;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.last-order-link {
+    margin: 0 auto 5rem;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    #order-header {
+        height: 5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        transition: all 0.5s ease;
+    }
+
+    #order-header.hidden {
+        top: -100%;
+    }
+
+    h2 {
+        margin: 8rem auto 3rem;
+    }
+
+    .contact-header {
+        margin: 2rem auto;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .order-section {
+        margin: 0 10% 3rem;
+    }
+
+    .order-step::before {
+        display: none;
+    }
+
+    .order-step a {
+        margin: 2rem auto 0;
+    }
+
+    .contact-methods {
+        border-radius: 1rem;
+        padding: 1rem;
+        margin: 0 auto 1.5rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 368px) {
+    #order-header {
+        height: 100px;
+    }
+
+    #title::after {
+        display: none;
+    }
+
+    h2 {
+        margin: 9rem auto 3rem;
+    }
+}
