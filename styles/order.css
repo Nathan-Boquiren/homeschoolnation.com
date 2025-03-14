@@ -98,6 +98,13 @@ h3 {
     color: var(--teal);
 }
 
+.order-step p em {
+    font-family: var(--secondary-font);
+    color: var(--teal);
+    text-indent: 3rem;
+    font-weight: 500;
+}
+
 /* Order Form */
 
 #order-form {
@@ -174,6 +181,7 @@ h3 {
     resize: none;
     max-height: 10rem;
     field-sizing: content;
+    white-space: pre-line;
 }
 
 .submit-btn {

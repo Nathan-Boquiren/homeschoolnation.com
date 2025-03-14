@@ -42,16 +42,31 @@ phoneInput.addEventListener("input", (e) => {
   }
 });
 
+const stickerListInput = document.getElementById("stickers-input");
+
+stickerListInput.addEventListener("input", () => {
+  let lines = stickerListInput.value.split("\n");
+
+  let formattedText = lines
+    .map((line) => {
+      if (line.trim() === "") return "";
+      return line.startsWith("•") ? line : `• ${line}`;
+    })
+    .join("\n");
+
+  stickerListInput.value = formattedText;
+});
+
 orderForm.addEventListener("submit", () => {
   confirmationMsg.classList.add("show");
-
-  inputs.forEach((input) => {
-    input.value = "";
-  });
-
   setTimeout(() => {
     confirmationMsg.classList.remove("show");
   }, 3000);
+  setTimeout(() => {
+    inputs.forEach((input) => {
+      input.value = "";
+    });
+  }, 100);
 });
 
 // ===== Sticky scroll navbar =====
