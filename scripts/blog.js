@@ -145,15 +145,16 @@ returnBtn.addEventListener("click", () => {
 });
 
 // ===== Sticky scroll navbar =====
-let lastScrollY = window.scrollY;
+let lastScrollY = 0;
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > lastScrollY) {
+  let currentScrollY = Math.max(0, window.scrollY);
+
+  if (currentScrollY > lastScrollY + 5) {
     header.classList.add("hidden");
-  } else if (window.scrollY === 0) {
-    header.classList.remove("hidden");
-  } else {
+  } else if (currentScrollY < lastScrollY - 5) {
     header.classList.remove("hidden");
   }
-  lastScrollY = window.scrollY;
+
+  lastScrollY = currentScrollY;
 });

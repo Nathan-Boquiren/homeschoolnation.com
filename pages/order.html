@@ -58,7 +58,7 @@
 
                     <form
                         action="https://docs.google.com/forms/d/e/1FAIpQLSfrHo6zKwykOLr9eRRJKwbRkbRBCpyis_xFo8q6ya6coA3RRw/formResponse"
-                        id="order-form">
+                        id="order-form" target="hidden_iframe">
 
                         <h4>Order Form</h4>
 
@@ -95,6 +95,7 @@
                         <button type="submit" class="submit-btn">Submit Form</button>
                     </form>
 
+                    <iframe name="hidden_iframe" style="display:none;"></iframe>
 
                 </li>
                 <li class="order-step">
@@ -128,6 +129,8 @@
                 </li>
             </ul>
         </section>
+
+        <div id="confirmation-msg">You're order has been placed!</div>
 
     </main>
 

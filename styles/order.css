@@ -133,7 +133,6 @@ h3 {
     backdrop-filter: blur(10px);
 }
 
-
 .input-wrapper label {
     font-family: var(--secondary-font);
     font-size: clamp(0.8rem, 2vw, 1.2rem);
@@ -247,6 +246,30 @@ h3 {
     margin: 0 auto 5rem;
 }
 
+/* Confirmation Msg */
+
+#confirmation-msg {
+    position: fixed;
+    bottom: -100%;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--secondary-font);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: white;
+    text-align: center;
+    text-wrap: balance;
+    background-color: var(--charcoal);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 250px;
+}
+
+#confirmation-msg.show {
+    bottom: 5rem;
+    opacity: 1;
+}
 
 /* Responsive Design */
 

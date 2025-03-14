@@ -6,6 +6,7 @@ const orderForm = document.getElementById("order-form");
 const labels = document.querySelectorAll("label");
 const inputs = document.querySelectorAll(".form-input");
 const phoneInput = document.getElementById("phone-input");
+const confirmationMsg = document.getElementById("confirmation-msg");
 
 // Order Form
 
@@ -41,16 +42,29 @@ phoneInput.addEventListener("input", (e) => {
   }
 });
 
+orderForm.addEventListener("submit", () => {
+  confirmationMsg.classList.add("show");
+
+  inputs.forEach((input) => {
+    input.value = "";
+  });
+
+  setTimeout(() => {
+    confirmationMsg.classList.remove("show");
+  }, 3000);
+});
+
 // ===== Sticky scroll navbar =====
-let lastScrollY = window.scrollY;
+let lastScrollY = 0;
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > lastScrollY) {
+  let currentScrollY = Math.max(0, window.scrollY);
+
+  if (currentScrollY > lastScrollY + 5) {
     header.classList.add("hidden");
-  } else if (window.scrollY === 0) {
-    header.classList.remove("hidden");
-  } else {
+  } else if (currentScrollY < lastScrollY - 5) {
     header.classList.remove("hidden");
   }
-  lastScrollY = window.scrollY;
+
+  lastScrollY = currentScrollY;
 });
