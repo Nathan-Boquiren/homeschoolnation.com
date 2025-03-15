@@ -259,6 +259,12 @@ header {
     }
 }
 
+@media (max-width: 425px) {
+    #article-list-container {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 368px) {
     #blog-header {
         height: 100px;

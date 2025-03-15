@@ -34,17 +34,24 @@ function populateProducts(data) {
 const productCards = document.querySelectorAll(".product-card");
 const productInfoScreen = document.getElementById("product-info-screen");
 const productInfoImg = document.getElementById("product-img-wrapper");
+const productInfoName = document.getElementById("product-name");
+const productInfoId = document.getElementById("product-id");
 const closeBtn = document.querySelector(".close-btn");
 
 if (document.body.clientWidth <= 768) {
-  productCards.forEach((card) => {
-    card.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const img = card.firstElementChild.src;
-      productInfoImg.innerHTML = `<img class="lightbox-img" src='${img}' alt="product image">`;
-      showInfoScreen();
-    });
+  gallery.addEventListener("click", (e) => {
+    const card = e.target.closest(".product-card");
+    if (!card) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const img = card.querySelector("img").src;
+    const name = card.querySelector(".product-name").innerHTML;
+    const id = card.querySelector(".product-id").innerHTML;
+    productInfoImg.innerHTML = `<img class="lightbox-img" src='${img}' alt="product image">`;
+    productInfoName.innerHTML = name;
+    productInfoId.innerHTML = id;
+    showInfoScreen();
   });
 
   document.body.addEventListener("click", (e) => {
