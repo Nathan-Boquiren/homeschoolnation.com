@@ -878,7 +878,7 @@ section#bert .section-images img.speech {
 
 section#bert .section-text {
     background-color: rgb(255, 255, 255);
-    padding: 20px;
+    padding: 1rem 2rem;
     position: relative;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
