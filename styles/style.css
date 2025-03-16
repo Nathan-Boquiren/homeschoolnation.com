@@ -1122,6 +1122,13 @@ section#final-cta-section .circle:nth-child(3) {
     section#final-cta-section .circle {
         display: none;
     }
+
+    section#final-cta-section .section-text::before,
+    section#final-cta-section .section-text::after {
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+        top: 90%;
+        bottom: 10px;
+    }
 }
 
 /* Footer */
