@@ -28,7 +28,7 @@ function populateProducts(data) {
       <h4 class="product-id">${data[i].id}</h4>
   </div>`;
   }
-  animateProducts();
+  // animateProducts();
 }
 
 const productCards = document.querySelectorAll(".product-card");
@@ -89,33 +89,33 @@ function hideInfoScreen() {
 }
 
 // Intersection observer for animation on scroll
-function animateProducts() {
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
-  };
+// function animateProducts() {
+//   const observerOptions = {
+//     root: null,
+//     rootMargin: "0px",
+//     threshold: 0.1,
+//   };
 
-  const observerCallback = (entries, observer) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        let delay = index * 200;
-        setTimeout(() => {
-          entry.target.classList.add("animate-in");
-          entry.target.classList.remove("animate-out");
-          observer.unobserve(entry.target); // Stop observing after animation
-        }, delay);
-      }
-    });
-  };
+//   const observerCallback = (entries, observer) => {
+//     entries.forEach((entry, index) => {
+//       if (entry.isIntersecting) {
+//         let delay = index * 200;
+//         setTimeout(() => {
+//           entry.target.classList.add("animate-in");
+//           entry.target.classList.remove("animate-out");
+//           observer.unobserve(entry.target); // Stop observing after animation
+//         }, delay);
+//       }
+//     });
+//   };
 
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
+//   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  document.querySelectorAll(".to-animate").forEach((element, index) => {
-    element.style.transitionDelay = `${index * 0.2}s`;
-    observer.observe(element);
-  });
-}
+//   document.querySelectorAll(".to-animate").forEach((element, index) => {
+//     element.style.transitionDelay = `${index * 0.2}s`;
+//     observer.observe(element);
+//   });
+// }
 
 // Sticky scroll navbar
 
