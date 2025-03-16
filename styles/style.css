@@ -705,7 +705,7 @@ section#social-proof .headline {
     font-family: var(--main-font);
     font-weight: 700;
     letter-spacing: 0px;
-    font-size: 3rem;
+    font-size: clamp(2rem, 3vw, 3rem);
 }
 
 section#social-proof .sub-headline {
@@ -715,14 +715,10 @@ section#social-proof .sub-headline {
 
 .testimonial-cards {
     display: flex;
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
     justify-content: center;
     flex-wrap: wrap;
     gap: 4rem;
     width: 100%;
-    /* min-width: fit-content; */
-    /* gap: 3rem; */
     margin-bottom: 2rem;
 }
 
@@ -818,7 +814,6 @@ section#social-proof .sub-headline {
         min-width: 250px;
         width: 80%;
         flex-direction: column;
-        gap: 0;
         border-radius: 30px;
     }
 
