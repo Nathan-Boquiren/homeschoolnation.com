@@ -83,6 +83,7 @@ h2 {
     font-family: var(--secondary-font);
     font-size: clamp(1rem, 2vw, 1.3rem);
     color: var(--charcoal);
+    max-width: unset;
 }
 
 /* Other question */

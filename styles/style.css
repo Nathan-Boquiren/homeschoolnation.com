@@ -37,7 +37,10 @@ p {
     text-wrap: pretty;
     max-width: 80ch;
     font-family: var(--secondary-font);
-    /* font-weight: 500; */
+}
+
+p span, p strong {
+    font-family: var(--secondary-font);
 }
 
 /* Header */
@@ -82,7 +85,7 @@ nav ul li {
     font-weight: 300;
 }
 
-nav ul li:hover a {
+nav ul li:hover a, nav ul:active a {
     color: var(--hover-mustard-yellow);
 }
 
