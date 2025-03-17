@@ -8,6 +8,7 @@
     --secondary-font: "Nunito Sans", Arial, Helvetica, sans-serif;
     --accent-font: "Chewy", Arial, Helvetica, sans-serif;
     --teal: #008080;
+    --light-teal: color-mix(in srgb, var(--teal) 75%, white 25%);
     --mustard-yellow: #E1ad01;
     --charcoal: #36454f;
     --soft-white: #fafafa;
@@ -53,7 +54,7 @@ header {
 
 header #title {
     margin-right: auto;
-    color: var(--teal);
+    color: var(--light-teal);
     font-size: 2rem;
     position: relative;
     font-family: "Poppins";
@@ -77,6 +78,8 @@ nav ul {
 
 nav ul li {
     list-style: none;
+    font-family: var(--secondary-font);
+    font-weight: 300;
 }
 
 nav ul li:hover a {
