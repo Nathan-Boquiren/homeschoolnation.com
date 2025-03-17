@@ -1,10 +1,11 @@
 /* Global styles and variables */
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons+Round);
-@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-    --main-font: "Poppins", Arial, Helvetica, sans-serif;
-    --secondary-font: "Roboto", Arial, Helvetica, sans-serif;
+    --main-font: "Rubik", Arial, Helvetica, sans-serif;
+    --secondary-font: "Nunito Sans", Arial, Helvetica, sans-serif;
     --accent-font: "Chewy", Arial, Helvetica, sans-serif;
     --teal: #008080;
     --mustard-yellow: #E1ad01;
@@ -34,6 +35,8 @@ h2, h3, h4 {
 p {
     text-wrap: pretty;
     max-width: 80ch;
+    font-family: var(--secondary-font);
+    font-weight: 500;
 }
 
 
@@ -476,7 +479,6 @@ section#features .sub-headline {
 
 .reason-card p {
     margin-top: 20px;
-    font-family: var(--secondary-font);
     line-height: 1.6;
     color: var(--soft-white);
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
@@ -565,13 +567,11 @@ section#leilani-art img {
 }
 
 .leilani-text p {
-    font-family: var(--secondary-font);
     color: var(--soft-white);
     line-height: 1.6;
     font-size: 1.2rem;
 
     span {
-        /* font-family: var(--secondary-font); */
         font-size: 2rem;
         font-weight: 600;
     }
@@ -616,7 +616,6 @@ section#product-gallery .headline {
 }
 
 section#product-gallery p {
-    font-family: var(--secondary-font);
     color: var(--charcoal);
     font-size: 1.3rem;
     padding: 20px;
@@ -761,7 +760,6 @@ section#social-proof .sub-headline {
 
 .testimonial-card p {
     line-height: 1.6;
-    font-family: var(--secondary-font);
     color: var(--charcoal);
     text-wrap: balance;
 }
@@ -921,7 +919,6 @@ section#bert .section-text::after {
 }
 
 section#bert .section-text p {
-    font-family: var(--secondary-font);
     font-size: 1.3rem;
     line-height: 1.6;
 }
