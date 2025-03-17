@@ -744,28 +744,35 @@ section#social-proof .sub-headline {
 
 .testimonial-card img {
     border-radius: 50%;
-    height: 150px;
-    outline: 5px solid var(--teal);
+    height: 200px;
     margin-bottom: auto;
 }
 
-.testimonial-card p, .testimonial-card span {
+.testimonial-card p, .testimonial-card h3 {
+    text-align: center;
     font-size: clamp(1rem, 2vw, 1.2rem);
-    line-height: 1.6;
-    text-align: left;
 }
 
 .testimonial-card p {
+    line-height: 1.6;
     font-family: var(--secondary-font);
     color: var(--charcoal);
     text-wrap: balance;
 }
 
-.testimonial-card span {
+.testimonial-card h3 {
+    line-height: 1.5;
     font-family: var(--main-font);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--teal);
     display: block;
+}
+
+.testimonial-card h3 span {
+    font-weight: 400;
+    color: rgba(0, 128, 128, 0.8);
+    color: color-mix(in srgb, var(--teal) 80%, white 20%);
+    font-size: inherit;
 }
 
 .tail {
