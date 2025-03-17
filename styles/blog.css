@@ -151,7 +151,7 @@ header {
     margin: 0 auto;
 }
 
-#article-content h3, #article-content p {
+#article-content h3 {
     font-family: var(--secondary-font);
 }
 
@@ -168,7 +168,6 @@ header {
 }
 
 #article-content p strong {
-    font-family: var(--secondary-font);
     color: var(--charcoal);
 }
 

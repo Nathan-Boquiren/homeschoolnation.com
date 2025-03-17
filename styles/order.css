@@ -86,7 +86,6 @@ h3 {
 }
 
 .order-step p, .contact-p {
-    font-family: var(--secondary-font);
     color: var(--charcoal);
     font-size: clamp(1rem, 2vw, 1.3rem);
     line-height: 1.8;

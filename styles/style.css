@@ -1,6 +1,6 @@
 /* Global styles and variables */
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons+Round);
-/* @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
@@ -39,7 +39,6 @@ p {
     font-weight: 500;
 }
 
-
 /* Header */
 header {
     display: flex;
@@ -57,6 +56,7 @@ header #title {
     color: var(--teal);
     font-size: 2rem;
     position: relative;
+    font-family: "Poppins";
 }
 
 header #title::after {
@@ -921,6 +921,7 @@ section#bert .section-text::after {
 section#bert .section-text p {
     font-size: 1.3rem;
     line-height: 1.6;
+    color: var(--charcoal);
 }
 
 section#bert .section-text p.subheadline {
@@ -1194,9 +1195,10 @@ footer {
 }
 
 .footer-bottom {
-    margin-top: 20px;
+    margin: 20px auto 0;
     font-size: 0.9rem;
     color: var(--soft-white);
+    display: inline-block;
 }
 
 @media (max-width: 768px) {
