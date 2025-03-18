@@ -5,6 +5,7 @@ let cl = console.log;
 // Product gallery image carousel
 const firstBtn = document.getElementById("first-set");
 const secondBtn = document.getElementById("second-set");
+const dotBtns = document.querySelectorAll(".dot-btn");
 const slider = document.getElementById("images-container");
 
 function scrollToPosition(position) {
@@ -12,6 +13,7 @@ function scrollToPosition(position) {
   slider.scrollTo({ left: position * scrollAmount, behavior: "smooth" });
 }
 
+// desktop view
 firstBtn.addEventListener("click", () => {
   scrollToPosition(0);
   secondBtn.classList.remove("active");
@@ -21,6 +23,21 @@ secondBtn.addEventListener("click", () => {
   scrollToPosition(1);
   firstBtn.classList.remove("active");
   secondBtn.classList.add("active");
+});
+
+// mobile view
+dotBtns.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    dotBtns.forEach((btn) => btn.classList.remove("active"));
+    this.classList.add("active");
+    const targetNum = this.dataset.target;
+    const targetElement = document.getElementById(`img-${targetNum}`);
+
+    slider.scrollTo({
+      left: targetElement.offsetLeft,
+      behavior: "smooth",
+    });
+  });
 });
 
 // const imageContainer = document.getElementById("images-container");
