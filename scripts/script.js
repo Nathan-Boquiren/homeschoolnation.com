@@ -1,7 +1,5 @@
 let cl = console.log;
 
-// const gitHubLink = "https://nathan-boquiren.github.io/homeschoolnation.com";
-
 // Product gallery image carousel
 const firstBtn = document.getElementById("first-set");
 const secondBtn = document.getElementById("second-set");
