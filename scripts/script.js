@@ -40,6 +40,19 @@ dotBtns.forEach((btn) => {
   });
 });
 
+// swipe functionality
+
+slider.addEventListener("scroll", () => {
+  const scrollLeft = slider.scrollLeft;
+  const scrollWidth = slider.scrollWidth - slider.clientWidth;
+  const scrollFraction = scrollLeft / scrollWidth;
+  const activeIndex = Math.round(scrollFraction * (dotBtns.length - 1));
+
+  dotBtns.forEach((btn, index) => {
+    btn.classList.toggle("active", index === activeIndex);
+  });
+});
+
 // const imageContainer = document.getElementById("images-container");
 
 // let arrows = document.querySelectorAll(".arrow");
