@@ -22,11 +22,14 @@ fetch("../articles/product-data.json")
 
 function populateProducts(data) {
   for (let i = 0; i < data.length; i++) {
-    gallery.innerHTML += `<div class="product-card to-animate">
-      <img src='../imgs/product-imgs/product-img(${data[i].index}).png' alt="product image">
+    gallery.innerHTML += `
+    <div class="product-card to-animate">
+      <div class="img-wrapper">
+        <img src='../imgs/product-imgs/product-img(${data[i].index}).png' alt="product image">
+      </div>
       <h4 class="product-name">${data[i].name}</h4>
       <h4 class="product-id">${data[i].id}</h4>
-  </div>`;
+    </div>`;
   }
   // animateProducts();
 }
