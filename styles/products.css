@@ -255,6 +255,21 @@ footer {
     }
 }
 
+@media (max-width: 425px) {
+    .product-card .img-wrapper::after {
+        display: none;
+    }
+    .product-card .img-wrapper  {
+        margin-bottom: 0;
+        padding: 0;
+        overflow: visible;
+    }
+    .product-card .img-wrapper img {
+        padding: 0;
+        object-fit: unset;
+    }
+}
+
 @media (max-width: 368px) {
     #products-header {
         height: 100px;
