@@ -85,7 +85,7 @@ h3 {
     text-wrap: balance;
 }
 
-.order-step p, .contact-p {
+.order-step p, .contact-p, .temporary-msg p {
     color: var(--charcoal);
     font-size: clamp(1rem, 2vw, 1.3rem);
     line-height: 1.8;
@@ -201,6 +201,8 @@ h3 {
     font-weight: 600;
 }
 
+
+
 /* Contact info section */
 
 .contact-p {
@@ -210,13 +212,14 @@ h3 {
 
 .contact-methods {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 2rem;
-    border: 3px solid var(--teal);
-    border-radius: 2rem;
+    /* border: 3px solid var(--teal); */
+    /* border-radius: 2rem; */
     width: fit-content;
     margin: 0 auto 2rem;
     padding: 1rem 5rem;
+    flex-wrap: wrap;
 }
 
 .contact-methods li {
@@ -254,7 +257,7 @@ h3 {
 
 /* Confirmation Msg */
 
-#confirmation-msg {
+/* #confirmation-msg {
     position: fixed;
     bottom: -100%;
     opacity: 0;
@@ -275,7 +278,7 @@ h3 {
 #confirmation-msg.show {
     bottom: 5rem;
     opacity: 1;
-}
+} */
 
 /* Responsive Design */
 
@@ -336,7 +339,7 @@ h3 {
         padding: 6px 8px;
     }
 
-    .contact-p {
+    .contact-p, .temporary-msg p {
         padding: 0 15%;
     }
 
@@ -360,4 +363,31 @@ h3 {
     h2 {
         margin: 9rem auto 3rem;
     }
+}
+
+/* ===== Temporary Message ===== */
+
+.temporary-msg {
+    min-width: 250px;
+    margin: 10rem auto;
+    text-wrap: balance;
+}
+
+.temporary-msg h2 {
+    padding: 0 15%;
+    text-wrap: balance;
+}
+
+.temporary-msg p {
+    text-align: center;
+    text-wrap: balance;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin: 0 auto;
+    color: var(--charcoal);
+}
+
+.temporary-msg .contact-link {
+    color: var(--teal);
+    font-weight: 600;
+    text-decoration: none;
 }
