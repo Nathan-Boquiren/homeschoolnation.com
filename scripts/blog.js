@@ -4,6 +4,7 @@ let cl = console.log;
 const header = document.getElementById("blog-header");
 const mainBlogScreen = document.getElementById("main-blog-screen");
 const articleListContainer = document.getElementById("article-list-container");
+let articleCards;
 const blogContainer = document.getElementById("blog-article-container");
 const blogTitleWrapper = document.getElementById("article-title");
 const blogContentWrapper = document.getElementById("article-content");
@@ -28,23 +29,43 @@ fetch("../articles/blog-articles.json")
 // populate articles
 
 function populateArticleCards(data) {
+  let html = "";
   data.forEach((article) => {
-    articleListContainer.innerHTML += `
+    html += `
         <div class="article-prev-card">
+          <div class="fill-animation"></div>
           <span class="line"></span>
           <h3 class="article-title">${article.title}</h3>
           <p class="article-date">${article.date}</p>
           <p class="prev-text">${article.preview_text}</p>
         </div>`;
   });
+  articleListContainer.innerHTML = html;
 
-  // add event listener
-  let articleCards = document.querySelectorAll(".article-prev-card");
+  articleCards = document.querySelectorAll(".article-prev-card");
   articleCards.forEach((card) => {
     card.addEventListener("click", () => {
       let articleTitle = card.querySelector(".article-title").innerHTML;
       articleTitle = formatArticleTitle(articleTitle);
       getArticle(articleTitle);
+    });
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const mousePosX = e.clientX - rect.left;
+      const mousePosY = e.clientY - rect.top;
+      const xPercent = (mousePosX / card.offsetWidth) * 100;
+      const yPercent = (mousePosY / card.offsetHeight) * 100;
+
+      card.style.setProperty("--circle-x", `${xPercent}%`);
+      card.style.setProperty("--circle-y", `${yPercent}%`);
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.setProperty("--circle-x", "50%");
+      card.style.setProperty("--circle-y", "50%");
+      const fillAnimation = card.querySelector(".fill-animation");
+      fillAnimation.style.clipPath = "circle(0% at 50% 50%)";
     });
   });
 }

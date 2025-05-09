@@ -79,8 +79,7 @@ header {
     margin-top: 1rem;
 }
 
-.article-prev-card::before, .article-prev-card::after {
-    content: '';
+.article-prev-card .fill-animation {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -89,39 +88,30 @@ header {
     border-radius: 10px;
     background-color: var(--mustard-yellow);
     z-index: -1;
-    transition: all 0.4s ease;
-    clip-path: circle(0% at 0% 0%);
+    transition: all 0.6s ease;
+    clip-path: circle(0% at var(--circle-x, 50%) var(--circle-y, 50%));
     transform-origin: 0% 0%;
 }
 
-.article-prev-card::after {
-    background-color: #e1ad0150;
-    z-index: -2;
-}
-
-.article-prev-card:hover::after, .article-prev-card:active::after {
-    animation: fillIn 0.4s ease forwards;
-}
-
-.article-prev-card:hover::before, .article-prev-card:active::before {
-    animation: fillIn 0.5s ease forwards;
+.article-prev-card:is(:hover, :active) .fill-animation {
+    animation: fillIn 0.6s ease forwards;
 }
 
 @keyframes fillIn {
     from {
-        clip-path: circle(0% at 0% 0%);
+        clip-path: circle(0% at var(--circle-x, 50%) var(--circle-y, 50%));
     }
-
     to {
-        clip-path: circle(100%);
+        clip-path: circle(150% at var(--circle-x, 50%) var(--circle-y, 50%));
     }
 }
 
-.article-prev-card:hover .article-title, .article-prev-card:hover .article-date, .article-prev-card:hover .prev-text, .article-prev-card:active .article-title, .article-prev-card:active .article-date, .article-prev-card:active .prev-text {
+.article-prev-card:is(:hover, :active)
+:is(.article-title, .article-date, .prev-text) {
     color: white;
 }
 
-.article-prev-card:hover .line, .article-prev-card:active .line {
+.article-prev-card:is(:hover, :active) .line {
     background-color: white;
     width: 5rem;
 }
