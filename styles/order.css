@@ -391,3 +391,20 @@ h3 {
     font-weight: 600;
     text-decoration: none;
 }
+
+.temp-browse-btn {
+    background-color: var(--mustard-yellow);
+    color: white;
+    text-decoration: none;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    width: fit-content;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100vmax;
+    display: block;
+    margin: 2rem auto 0;
+    font-weight: 500;
+}
+
+.temp-browse-btn:hover, .temp-browse-btn:focus, .temp-browse-btn:active {
+    background-color: var(--hover-mustard-yellow);
+}
