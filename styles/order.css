@@ -85,7 +85,9 @@ h3 {
     text-wrap: balance;
 }
 
-.order-step p, .contact-p, .temporary-msg p {
+.order-step p,
+.contact-p,
+.temporary-msg p {
     color: var(--charcoal);
     font-size: clamp(1rem, 2vw, 1.3rem);
     line-height: 1.8;
@@ -151,7 +153,7 @@ h3 {
     z-index: 1;
 }
 
-.input-wrapper:focus-within label, .input-wrapper.filled label {
+.input-wrapper:where(:focus-within, .filled) label {
     color: white;
     top: 0;
     background-color: var(--mustard-yellow);
@@ -160,7 +162,7 @@ h3 {
     font-weight: 600;
 }
 
-.input-wrapper input, .input-wrapper textarea {
+.input-wrapper :where(input, textarea) {
     width: 100%;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
@@ -171,7 +173,7 @@ h3 {
     background-color: transparent;
 }
 
-.input-wrapper:focus-within input, .input-wrapper:focus-within textarea {
+.input-wrapper:focus-within :where(input, textarea) {
     border-color: white;
     outline: none;
 }
@@ -313,7 +315,7 @@ h3 {
         margin: 0 10% 3rem;
     }
 
-    .order-step::before, .order-step::after {
+    .order-step:where(::before, ::after) {
         display: none;
     }
 
@@ -411,6 +413,6 @@ h3 {
     font-weight: 500;
 }
 
-.temp-browse-btn:hover, .temp-browse-btn:focus, .temp-browse-btn:active {
+.temp-browse-btn:is(:hover, :active, :focus) {
     background-color: var(--hover-mustard-yellow);
 }

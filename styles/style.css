@@ -85,7 +85,7 @@ nav ul li {
     font-weight: 300;
 }
 
-nav ul li:hover a, nav ul li:active a {
+nav ul li:is(:hover, :active) a{
     color: var(--hover-mustard-yellow);
 }
 

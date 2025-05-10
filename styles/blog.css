@@ -178,7 +178,7 @@ header {
     cursor: pointer;
 }
 
-#return-btn:hover, #return-btn:active {
+#return-btn:is(:hover, :active) {
     background-color: var(--mustard-yellow);
     color: white;
 }

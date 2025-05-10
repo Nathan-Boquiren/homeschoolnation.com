@@ -107,7 +107,7 @@ h2 {
 }
 
 /* info screen lightbox */
-#product-info-screen {
+/* #product-info-screen {
     display: none;
     align-items: center;
     justify-content: center;
@@ -162,7 +162,7 @@ h2 {
     transition: all 0.2s ease;
 }
 
-.close-btn:hover, .close-btn:active {
+.close-btn:is(:hover, :active) {
     color: lightgrey;
 }
 
@@ -210,7 +210,7 @@ h2 {
     padding: 5px 1rem;
     margin: 0 auto;
     border-radius: 0.5rem;
-}
+} */
 
 /* footer */
 
