@@ -6,13 +6,8 @@ const gallery = document.getElementById("product-gallery-container");
 
 // fetch product data
 
-fetch("../articles/product-data.json")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok " + response.statusText);
-    }
-    return response.json();
-  })
+fetch("https://hs-nation-imgs-backend.onrender.com/images")
+  .then((response) => response.json())
   .then((data) => {
     populateProducts(data);
   })
@@ -25,7 +20,7 @@ function populateProducts(data) {
     gallery.innerHTML += `
     <div class="product-card to-animate">
       <div class="img-wrapper">
-        <img src='../imgs/product-imgs/product-img(${data[i].index}).png' alt="product image">
+        <img src='${data[i].imageUrl}' alt="product image">
       </div>
       <h4 class="product-name">${data[i].name}</h4>
       <h4 class="product-id">${data[i].id}</h4>
