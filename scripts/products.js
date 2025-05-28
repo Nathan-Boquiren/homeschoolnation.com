@@ -7,7 +7,7 @@ const gallery = document.getElementById("product-gallery-container");
 // fetch product data
 
 document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.getElementById("gallery");
+  // const gallery = document.getElementById("gallery");
   fetch("https://hs-nation-imgs-backend.onrender.com/images", {
     cache: "no-store",
   })
