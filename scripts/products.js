@@ -6,28 +6,33 @@ const gallery = document.getElementById("product-gallery-container");
 
 // fetch product data
 
-fetch("https://hs-nation-imgs-backend.onrender.com/images")
-  .then((response) => response.json())
-  .then((data) => {
-    populateProducts(data);
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.getElementById("gallery");
+  fetch("https://hs-nation-imgs-backend.onrender.com/images", {
+    cache: "no-store",
   })
-  .catch((error) => {
-    console.error("There was a problem fetching the product data:", error);
-  });
-
-function populateProducts(data) {
-  for (let i = 0; i < data.length; i++) {
-    gallery.innerHTML += `
-    <div class="product-card to-animate">
-      <div class="img-wrapper">
-        <img src='${data[i].imageUrl}' alt="product image">
-      </div>
-      <h4 class="product-name">${data[i].name}</h4>
-      <h4 class="product-id">${data[i].id}</h4>
-    </div>`;
-  }
-  // animateProducts();
-}
+    .then((res) => res.json())
+    .then((data) => {
+      let html = "";
+      for (const item of data) {
+        html += `
+              <div class="product-card to-animate">
+                <div class="img-wrapper">
+                  <img
+                    src="https://drive.google.com/thumbnail?id=${item.fileId}"
+                    alt="${item.name}"
+                    loading="lazy"
+                  >
+                </div>
+                <h4 class="product-name">${item.name}</h4>
+                <h4 class="product-id">${item.id}</h4>
+              </div>
+            `;
+      }
+      gallery.innerHTML = html;
+    })
+    .catch((err) => console.error("Fetch error:", err));
+});
 
 const productCards = document.querySelectorAll(".product-card");
 const productInfoScreen = document.getElementById("product-info-screen");
