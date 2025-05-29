@@ -42,7 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
       data.forEach((item, idx) => {
         const card = gallery.children[idx];
         const img = card.querySelector("img");
-        img.src = `https://drive.google.com/thumbnail?id=${item.fileId}`;
+        img.src = `https://drive.google.com/thumbnail?id=${item.fileId}&sz=s1000`;
+        img.setAttribute("data-id", item.fileId);
         img.onload = () => {
           img.style.transition = "opacity 0.3s";
           img.style.opacity = "1";

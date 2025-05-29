@@ -8,37 +8,14 @@ const lineTwo = document.querySelector(".line-2");
 const lineThree = document.querySelector(".line-3");
 const hamburger = document.getElementById("hamburger");
 
-hamburger.addEventListener("click", () => {
-  if (navBar.style.left === "0px") {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-});
+document.addEventListener("click", (e) => {
+  const isHamburger = hamburger.contains(e.target);
+  const isNavBar = navBar.contains(e.target);
 
-function openMenu() {
-  navBar.style.left = "0";
-  hamburger.style.transform = "rotate(-90deg)";
-  lineOne.style.transform = "translateY(9px) rotate(45deg)";
-  lineTwo.style.width = "0px";
-  lineThree.style.transform = "translateY(-9px)rotate(-45deg)";
-}
-
-function closeMenu() {
-  navBar.style.left = "-65vw";
-  hamburger.style.transform = "rotate(0deg)";
-  lineOne.style.transform = "rotate(0deg)";
-  lineTwo.style.width = "30px";
-  lineThree.style.transform = "rotate(0deg)";
-}
-
-document.body.addEventListener("click", (e) => {
-  if (
-    e.target !== navBar &&
-    e.target !== hamburger &&
-    navBar.style.left === "0px"
-  ) {
-    closeMenu();
+  if (isHamburger) {
+    navBar.classList.toggle("open");
+  } else if (!isNavBar && navBar.classList.contains("open")) {
+    navBar.classList.remove("open");
   }
 });
 

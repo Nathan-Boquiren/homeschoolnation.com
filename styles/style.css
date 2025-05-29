@@ -58,7 +58,7 @@ header {
 header #title {
     margin-right: auto;
     color: var(--light-teal);
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 3vw, 2rem);
     position: relative;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
@@ -69,33 +69,33 @@ header #title::after {
     top: 80%;
     right: 0;
     font-family: var(--secondary-font);
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: 300;
     color: var(--mustard-yellow);
 }
 
-nav ul {
+.navbar-links {
     display: flex;
     gap: 2rem;
 }
 
-nav ul li {
+.navbar-links li {
     list-style: none;
     font-family: var(--secondary-font);
     font-weight: 300;
 }
 
-nav ul li:is(:hover, :active) a{
+.navbar-links li:is(:hover, :active) a {
     color: var(--hover-mustard-yellow);
 }
 
-nav ul li a {
+.navbar-links li a {
     color: var(--soft-white);
     text-decoration: none;
     font-size: 1.2rem;
 }
 
-nav ul li:last-child a {
+.navbar-links li:last-child a {
     background-color: var(--mustard-yellow);
     color: white;
     padding: 0.5rem 1rem;
@@ -103,7 +103,7 @@ nav ul li:last-child a {
     font-weight: 500;
 }
 
-nav ul li:last-child:hover a {
+.navbar-links li:last-child:hover a {
     background-color: var(--hover-mustard-yellow);
 }
 
@@ -233,7 +233,6 @@ section#hero #hero-content {
         margin: unset;
         text-wrap: wrap;
         text-align: right;
-        font-size: 1.5rem;
         width: 80%;
     }
 
@@ -244,7 +243,7 @@ section#hero #hero-content {
         z-index: 100;
     }
 
-    nav ul {
+    .navbar-links {
         padding: 100px 30px;
         display: flex;
         flex-direction: column;
@@ -260,18 +259,17 @@ section#hero #hero-content {
         z-index: 500;
     }
 
-    nav ul li:active {
+    .navbar-links li:active {
         font-weight: 500;
-
     }
 
-    nav ul li a {
+    .navbar-links li a {
         color: white;
         text-decoration: none;
         font-size: 1.2rem;
     }
 
-    nav ul li:last-child a {
+    .navbar-links li:last-child a {
         background-color: unset;
         color: var(--soft-white);
         padding: unset;
@@ -279,7 +277,7 @@ section#hero #hero-content {
         font-weight: unset;
     }
 
-    nav ul li:last-child:hover a {
+    .navbar-links li:last-child:hover a {
         background-color: transparent;
     }
 
@@ -302,6 +300,25 @@ section#hero #hero-content {
         background-color: #fafafa;
         border-radius: 3px;
         transition: all 0.3s ease;
+    }
+
+    /* hamburger open style */
+
+    .navbar-links.open {
+        left: 0;
+    }
+
+    nav:has(.navbar-links.open) + #hamburger {
+        transform: rotate(-90deg);
+    }
+    nav:has(.navbar-links.open) + #hamburger .line-1 {
+        transform: translateY(9px) rotate(45deg);
+    }
+    nav:has(.navbar-links.open) + #hamburger .line-2 {
+        width: 0px;
+    }
+    nav:has(.navbar-links.open) + #hamburger .line-3 {
+        transform: translateY(-9px)rotate(-45deg);
     }
 
     section#hero #hero-content {

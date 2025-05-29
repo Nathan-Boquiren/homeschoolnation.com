@@ -343,7 +343,7 @@ footer {
 
 @media (max-width: 368px) {
     #products-header {
-        height: 100px;
+        height: 5.5rem;
     }
 
     #title::after {
