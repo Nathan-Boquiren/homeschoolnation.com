@@ -26,26 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
       gallery.innerHTML = "";
 
       data.forEach((item) => {
-        const card = document.createElement("div");
-        card.className = "product-card to-animate";
-
-        const imgWrapper = document.createElement("div");
-        imgWrapper.className = "img-wrapper";
-
-        imgWrapper.innerHTML = `<img alt="${item.name}" loading="lazy" style="opacity:0.2">`;
-
-        const infoWrapper = document.createElement("div");
-        infoWrapper.className = "info-wrapper";
-        infoWrapper.innerHTML = `
-      <h4 class="product-id">#${item.id}</h4>
-      <hr>
-      <h4 class="product-name">${item.name}</h4>
-    `;
-
-        card.appendChild(imgWrapper);
-        card.appendChild(infoWrapper);
-
-        gallery.appendChild(card);
+        gallery.innerHTML += `
+          <div class="product-card" tabindex="0">
+            <div class="img-wrapper">
+              <img alt="${item.name}" loading="lazy" style="opacity:0.2">
+            </div>
+            <div class="info-wrapper">
+              <h4 class="product-id">#${item.id}</h4>
+              <hr>
+              <h4 class="product-name">${item.name}</h4>
+          </div>
+        `;
       });
 
       data.forEach((item, idx) => {
@@ -75,10 +66,10 @@ if (document.body.clientWidth <= 768) {
     e.preventDefault();
     e.stopPropagation();
 
-    const img = card.querySelector("img").src;
+    const imgLink = card.querySelector("img").src;
     const name = card.querySelector(".product-name").innerHTML;
     const id = card.querySelector(".product-id").innerHTML;
-    productInfoImg.innerHTML = `<img class="lightbox-img" src='${img}' alt="product image">`;
+    productInfoImg.innerHTML = `<img class="lightbox-img" src='${imgLink}' alt="product image">`;
     productInfoName.innerHTML = name;
     productInfoId.innerHTML = id;
     showInfoScreen();
@@ -102,55 +93,17 @@ if (document.body.clientWidth <= 768) {
 
 function showInfoScreen() {
   document.body.style.overflow = "hidden";
-  productInfoScreen.style.display = "flex";
-  if (productInfoScreen.classList.contains("hide")) {
-    productInfoScreen.classList.remove("hide");
-  }
   productInfoScreen.classList.add("show");
 }
 
 function hideInfoScreen() {
   document.body.style.overflow = "auto";
-  productInfoScreen.classList.add("hide");
-  setTimeout(() => {
-    productInfoScreen.classList.remove("show");
-    productInfoScreen.style.display = "none";
-  }, 200);
+  productInfoScreen.classList.remove("show");
 }
-
-// Intersection observer for animation on scroll
-// function animateProducts() {
-//   const observerOptions = {
-//     root: null,
-//     rootMargin: "0px",
-//     threshold: 0.1,
-//   };
-
-//   const observerCallback = (entries, observer) => {
-//     entries.forEach((entry, index) => {
-//       if (entry.isIntersecting) {
-//         let delay = index * 200;
-//         setTimeout(() => {
-//           entry.target.classList.add("animate-in");
-//           entry.target.classList.remove("animate-out");
-//           observer.unobserve(entry.target); // Stop observing after animation
-//         }, delay);
-//       }
-//     });
-//   };
-
-//   const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-//   document.querySelectorAll(".to-animate").forEach((element, index) => {
-//     element.style.transitionDelay = `${index * 0.2}s`;
-//     observer.observe(element);
-//   });
-// }
 
 // Sticky scroll navbar
 
 let lastScrollY = 0;
-
 window.addEventListener("scroll", () => {
   let currentScrollY = Math.max(0, window.scrollY);
 
