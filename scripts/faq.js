@@ -1,5 +1,3 @@
-let cl = console.log;
-
 // DOM elements
 const header = document.getElementById("faq-header");
 const faqContainer = document.getElementById("faq-container");
@@ -69,18 +67,3 @@ function expandQuestion(btn) {
     answerWrapper.style.maxHeight = `${answerWrapper.scrollHeight}px`;
   }
 }
-
-// ===== Sticky scroll navbar =====
-let lastScrollY = 0;
-
-window.addEventListener("scroll", () => {
-  let currentScrollY = Math.max(0, window.scrollY);
-
-  if (currentScrollY > lastScrollY + 5) {
-    header.classList.add("hidden");
-  } else if (currentScrollY < lastScrollY - 5) {
-    header.classList.remove("hidden");
-  }
-
-  lastScrollY = currentScrollY;
-});

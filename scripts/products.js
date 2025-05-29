@@ -1,5 +1,3 @@
-let cl = console.log;
-
 // DOM Elements
 const header = document.getElementById("products-header");
 const gallery = document.getElementById("product-gallery-container");
@@ -101,18 +99,3 @@ function hideInfoScreen() {
   document.body.style.overflow = "auto";
   productInfoScreen.classList.remove("show");
 }
-
-// Sticky scroll navbar
-
-let lastScrollY = 0;
-window.addEventListener("scroll", () => {
-  let currentScrollY = Math.max(0, window.scrollY);
-
-  if (currentScrollY > lastScrollY + 5) {
-    header.classList.add("hidden");
-  } else if (currentScrollY < lastScrollY - 5) {
-    header.classList.remove("hidden");
-  }
-
-  lastScrollY = currentScrollY;
-});

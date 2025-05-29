@@ -1,5 +1,3 @@
-let cl = console.log;
-
 // ===== DOM Elements =====
 const header = document.getElementById("blog-header");
 const mainBlogScreen = document.getElementById("main-blog-screen");
@@ -79,7 +77,6 @@ function formatArticleTitle(title) {
 }
 
 // fetch full article
-
 async function fetchArticleData(title) {
   try {
     let response = await fetch(`../articles/${title}.json`);
@@ -103,7 +100,6 @@ async function getArticle(title) {
 }
 
 // populate full blog
-
 function populateBlogContainer(article) {
   document.title = article.title;
   blogTitleWrapper.innerHTML = article.title;
@@ -153,7 +149,6 @@ function animateBlogPost(sections) {
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
-
   sections.forEach((element, index) => {
     element.style.transitionDelay = `${index * 0.2}s`;
     observer.observe(element);
@@ -163,19 +158,4 @@ function animateBlogPost(sections) {
 // Return to blog posts btn
 returnBtn.addEventListener("click", () => {
   window.location.reload();
-});
-
-// ===== Sticky scroll navbar =====
-let lastScrollY = 0;
-
-window.addEventListener("scroll", () => {
-  let currentScrollY = Math.max(0, window.scrollY);
-
-  if (currentScrollY > lastScrollY + 5) {
-    header.classList.add("hidden");
-  } else if (currentScrollY < lastScrollY - 5) {
-    header.classList.remove("hidden");
-  }
-
-  lastScrollY = currentScrollY;
 });

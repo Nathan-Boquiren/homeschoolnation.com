@@ -1,5 +1,3 @@
-let cl = console.log;
-
 // Product gallery image carousel
 const firstBtn = document.getElementById("first-set");
 const secondBtn = document.getElementById("second-set");
@@ -39,7 +37,6 @@ dotBtns.forEach((btn) => {
 });
 
 // swipe functionality
-
 slider.addEventListener("scroll", () => {
   const scrollLeft = slider.scrollLeft;
   const scrollWidth = slider.scrollWidth - slider.clientWidth;

@@ -1,5 +1,3 @@
-let cl = console.log;
-
 // ===== DOM Elements =====
 const header = document.getElementById("order-header");
 const orderForm = document.getElementById("order-form");
@@ -67,19 +65,4 @@ orderForm.addEventListener("submit", () => {
       input.value = "";
     });
   }, 100);
-});
-
-// ===== Sticky scroll navbar =====
-let lastScrollY = 0;
-
-window.addEventListener("scroll", () => {
-  let currentScrollY = Math.max(0, window.scrollY);
-
-  if (currentScrollY > lastScrollY + 5) {
-    header.classList.add("hidden");
-  } else if (currentScrollY < lastScrollY - 5) {
-    header.classList.remove("hidden");
-  }
-
-  lastScrollY = currentScrollY;
 });

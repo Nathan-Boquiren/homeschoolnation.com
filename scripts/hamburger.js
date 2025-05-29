@@ -1,12 +1,12 @@
-console.log(
+let cl = console.log;
+
+cl(
   "This website was created by Nathan Boquiren. For your own personal website, or an online resume/cv, contact me at nathanjboquiren@gmail."
 );
 
 const navBar = document.querySelector(".navbar-links");
-const lineOne = document.querySelector(".line-1");
-const lineTwo = document.querySelector(".line-2");
-const lineThree = document.querySelector(".line-3");
 const hamburger = document.getElementById("hamburger");
+const contactBtns = document.querySelectorAll(".contact-wrapper");
 
 document.addEventListener("click", (e) => {
   const isHamburger = hamburger.contains(e.target);
@@ -19,7 +19,18 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Intersection observer for animation on scroll
+// ===== Footer Contact Links Event listeners =====
+contactBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.id === "email-link") {
+      window.location.href = "mailto:nathanjboquiren@gmail.com";
+    } else if (btn.id === "phone-link") {
+      window.location.href = "tel:+18438722917";
+    }
+  });
+});
+
+// ===== Scroll Animation =====
 document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
@@ -48,16 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Event listeners for contacting in footer
+// ===== Sticky Navbar =====
+let lastScrollY = 0;
 
-const contactBtns = document.querySelectorAll(".contact-wrapper");
+window.addEventListener("scroll", () => {
+  let currentScrollY = Math.max(0, window.scrollY);
 
-contactBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (btn.id === "email-link") {
-      window.location.href = "mailto:nathanjboquiren@gmail.com";
-    } else if (btn.id === "phone-link") {
-      window.location.href = "tel:+18438722917";
-    }
-  });
+  if (currentScrollY > lastScrollY + 5) {
+    header.classList.add("hidden");
+  } else if (currentScrollY < lastScrollY - 5) {
+    header.classList.remove("hidden");
+  }
+
+  lastScrollY = currentScrollY;
 });
