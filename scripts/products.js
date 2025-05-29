@@ -23,8 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     loading="lazy"
                   >
                 </div>
-                <h4 class="product-name">${item.name}</h4>
-                <h4 class="product-id">${item.id}</h4>
+                <div class="info-wrapper">
+                  <h4 class="product-id">#${item.id}</h4>
+                  <hr>
+                  <h4 class="product-name">${item.name}</h4>
+                </div>
               </div>
             `;
       }
