@@ -24,22 +24,39 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.json())
     .then((data) => {
       gallery.innerHTML = "";
-      let html = "";
-      for (const item of data) {
-        html += `
-              <div class="product-card to-animate">
-                <div class="img-wrapper">
-                  <img src="https://drive.google.com/thumbnail?id=${item.fileId}" alt="${item.name}" loading="lazy">
-                </div>
-                <div class="info-wrapper">
-                  <h4 class="product-id">#${item.id}</h4>
-                  <hr>
-                  <h4 class="product-name">${item.name}</h4>
-                </div>
-              </div>
-            `;
-      }
-      gallery.innerHTML = html;
+
+      data.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "product-card to-animate";
+
+        const imgWrapper = document.createElement("div");
+        imgWrapper.className = "img-wrapper";
+
+        imgWrapper.innerHTML = `<img alt="${item.name}" loading="lazy" style="opacity:0.2">`;
+
+        const infoWrapper = document.createElement("div");
+        infoWrapper.className = "info-wrapper";
+        infoWrapper.innerHTML = `
+      <h4 class="product-id">#${item.id}</h4>
+      <hr>
+      <h4 class="product-name">${item.name}</h4>
+    `;
+
+        card.appendChild(imgWrapper);
+        card.appendChild(infoWrapper);
+
+        gallery.appendChild(card);
+      });
+
+      data.forEach((item, idx) => {
+        const card = gallery.children[idx];
+        const img = card.querySelector("img");
+        img.src = `https://drive.google.com/thumbnail?id=${item.fileId}`;
+        img.onload = () => {
+          img.style.transition = "opacity 0.3s";
+          img.style.opacity = "1";
+        };
+      });
     })
     .catch((err) => console.error("Fetch error:", err));
 });
