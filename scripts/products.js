@@ -4,6 +4,17 @@ let cl = console.log;
 const header = document.getElementById("products-header");
 const gallery = document.getElementById("product-gallery-container");
 
+for (let i = 0; i < 12; i++) {
+  gallery.innerHTML += `
+    <div class="product-card placeholder">
+      <div class="img-wrapper"></div>
+      <div class="info-wrapper">
+          <h4 class="product-id">. . . . . . . . </h4>
+          <h4 class="product-name">. . . . . . . . . . . .</h4>
+      </div>
+    </div>`;
+}
+
 // fetch product data
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,16 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .then((res) => res.json())
     .then((data) => {
+      gallery.innerHTML = "";
       let html = "";
       for (const item of data) {
         html += `
               <div class="product-card to-animate">
                 <div class="img-wrapper">
-                  <img
-                    src="https://drive.google.com/thumbnail?id=${item.fileId}"
-                    alt="${item.name}"
-                    loading="lazy"
-                  >
+                  <img src="https://drive.google.com/thumbnail?id=${item.fileId}" alt="${item.name}" loading="lazy">
                 </div>
                 <div class="info-wrapper">
                   <h4 class="product-id">#${item.id}</h4>

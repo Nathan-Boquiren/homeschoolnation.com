@@ -44,6 +44,68 @@ h2 {
     justify-content: center;
 }
 
+/* placeholder cards */
+
+.product-card.placeholder {
+    background-color: #eeeeee;
+    box-shadow: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card.placeholder::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -1rem;
+    left: -1rem;
+    height: 20rem;
+    width: 2rem;
+    background-color: white;
+    filter: blur(1rem);
+    animation: shift 2s ease infinite;
+}
+
+.product-card.placeholder .img-wrapper {
+    background-image: none;
+}
+
+.product-card.placeholder .img-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 1rem;
+    background-color: var(--soft-white);
+    border-radius: 0.5rem;
+}
+
+.product-card.placeholder .info-wrapper {
+    background-color: transparent;
+}
+
+.product-card.placeholder .info-wrapper h4 {
+    width: fit-content;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.product-card.placeholder .info-wrapper h4::after {
+    content: '';
+    position: absolute;
+    border-radius: 0.5rem;
+    inset: 0;
+    background-color: var(--soft-white);
+    z-index: 1;
+}
+
+@keyframes shift {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    100% {
+        transform: translate(30rem, 100%) rotate(45deg);
+    }
+}
 .product-card {
     width: clamp(8.5rem, 40%, 15rem);
     position: relative;
@@ -64,7 +126,7 @@ h2 {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-image: url(https://sdmntprwestus2.oaiusercontent.com/files/00000000-7b4c-61f8-b6eb-ff5250627c46/raw?se=2025-05-29T02%3A37%3A16Z&sp=r&sv=2024-08-04&sr=b&scid=d3bef075-6b96-564c-ada1-74a6417668c3&skoid=71e8fa5c-90a9-4c17-827b-14c3005164d6&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-28T20%3A40%3A50Z&ske=2025-05-29T20%3A40%3A50Z&sks=b&skv=2024-08-04&sig=Rneu7vVd6P%2B/JGxE9Ad7cVj2C7E1W3quOUs9wRDqxoo%3D);
+    background-image: url('../imgs/mockup-bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
