@@ -1,5 +1,4 @@
 // DOM elements
-const header = document.getElementById("faq-header");
 const faqContainer = document.getElementById("faq-container");
 
 // Fetch faq json data

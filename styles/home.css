@@ -62,104 +62,6 @@
 }
 
 @media (max-width: 768px) {
-    header {
-        justify-content: flex-end;
-        padding: 30px;
-    }
-
-    header #title {
-        text-align: center;
-        margin: unset;
-        text-wrap: wrap;
-        text-align: right;
-        width: 80%;
-    }
-
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 100;
-    }
-
-    .navbar-links {
-        padding: 100px 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        transition: all 0.3s ease-out;
-        min-width: 180px;
-        left: -65vw;
-        top: 0;
-        position: absolute;
-        background-color: var(--teal);
-        height: 100vh;
-        width: 40vw;
-        z-index: 500;
-    }
-
-    .navbar-links li:active {
-        font-weight: 500;
-    }
-
-    .navbar-links li a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-
-    .navbar-links li:last-child a {
-        background-color: unset;
-        color: var(--soft-white);
-        padding: unset;
-        border-radius: unset;
-        font-weight: unset;
-    }
-
-    .navbar-links li:last-child:hover a {
-        background-color: transparent;
-    }
-
-    .hamburger {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        overflow: visible;
-        padding: 10px;
-        z-index: 200;
-        left: 0;
-        top: 0;
-        transition: all 0.3s ease;
-    }
-
-    .hamburger-line {
-        margin: 3px auto;
-        width: 30px;
-        height: 3px;
-        background-color: #fafafa;
-        border-radius: 3px;
-        transition: all 0.3s ease;
-    }
-
-    /* hamburger open style */
-
-    .navbar-links.open {
-        left: 0;
-    }
-
-    nav:has(.navbar-links.open) + #hamburger {
-        transform: rotate(-90deg);
-    }
-    nav:has(.navbar-links.open) + #hamburger .line-1 {
-        transform: translateY(9px) rotate(45deg);
-    }
-    nav:has(.navbar-links.open) + #hamburger .line-2 {
-        width: 0px;
-    }
-    nav:has(.navbar-links.open) + #hamburger .line-3 {
-        transform: translateY(-9px)rotate(-45deg);
-    }
-
     section#hero #hero-content {
         padding: 15vh 0 30px;
         flex-direction: column;
@@ -196,6 +98,7 @@
         height: auto;
     }
 }
+
 
 /* Youtube Video */
 

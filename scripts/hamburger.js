@@ -4,6 +4,7 @@ cl(
   "This website was created by Nathan Boquiren. For your own personal website, or an online resume/cv, contact me at nathanjboquiren@gmail."
 );
 
+const header = document.querySelector(".header-wrapper");
 const navBar = document.querySelector(".navbar-links");
 const hamburger = document.getElementById("hamburger");
 const contactBtns = document.querySelectorAll(".contact-wrapper");

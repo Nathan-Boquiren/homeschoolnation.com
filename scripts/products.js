@@ -1,5 +1,4 @@
 // DOM Elements
-const header = document.getElementById("products-header");
 const gallery = document.getElementById("product-gallery-container");
 
 for (let i = 0; i < 12; i++) {

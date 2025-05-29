@@ -1,5 +1,4 @@
 // ===== DOM Elements =====
-const header = document.getElementById("blog-header");
 const mainBlogScreen = document.getElementById("main-blog-screen");
 const articleListContainer = document.getElementById("article-list-container");
 let articleCards;
