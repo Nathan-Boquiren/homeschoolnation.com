@@ -92,7 +92,7 @@ if (document.body.clientWidth <= 768) {
 }
 
 function showInfoScreen() {
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "clip";
   productInfoScreen.classList.add("show");
 }
 
