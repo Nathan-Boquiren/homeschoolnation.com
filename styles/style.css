@@ -36,10 +36,20 @@ p {
     text-wrap: balance;
     max-width: 80ch;
     font-family: var(--secondary-font);
+    line-height: 1.8;
 }
 
 p span, p strong {
     font-family: var(--secondary-font);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 /* Header */
@@ -120,32 +130,6 @@ header #title::after {
     cursor: pointer;
 }
 
-/* Hero Section */
-section#hero {
-    background-image: url(../imgs/chalkboard-bg.webp);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-section#hero #hero-content {
-    display: flex;
-    align-items: center;
-    padding: 100px 120px;
-    position: relative;
-    backdrop-filter: brightness(0.7);
-}
-
-.hero-text-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 50px;
-    width: 50%;
-    text-align: left;
-}
-
 .headline {
     font-size: 5rem;
     color: var(--mustard-yellow);
@@ -153,6 +137,7 @@ section#hero #hero-content {
     font-family: var(--accent-font);
     font-weight: 400;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 .sub-headline {
@@ -161,7 +146,6 @@ section#hero #hero-content {
     font-family: var(--secondary-font);
     font-size: 1.2rem;
     line-height: 2;
-    width: 80%;
     animation: fadeIn 1.4s ease forwards;
 }
 
