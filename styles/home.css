@@ -622,6 +622,7 @@ section#bert .section-text {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     width: fit-content;
+    max-width: 50%;
 }
 
 section#bert .section-text::before, section#bert .section-text::after {
@@ -648,6 +649,8 @@ section#bert .section-text::after {
 
 section#bert .section-text p {
     color: var(--charcoal);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    text-wrap: pretty;
 }
 
 section#bert .section-text .headline {
@@ -655,7 +658,7 @@ section#bert .section-text .headline {
     font-size: clamp(3rem, 5vw, 4rem);
 }
 
-section#bert .section-text p.subheadline {
+section#bert .section-text .subheadline {
     font-family: var(--main-font);
     color: var(--teal);
     font-weight: 700;
@@ -688,6 +691,7 @@ section#bert .section-text p.subheadline {
         background-color: unset;
         box-shadow: none;
         text-align: center;
+        max-width: unset;
     }
 
     section#bert .section-text h2.headline {
