@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           entry.target.classList.add("animate-in");
           entry.target.classList.remove("animate-out");
-          observer.unobserve(entry.target); // Stop observing after animation
+          observer.unobserve(entry.target);
         }, delay);
       }
     });
