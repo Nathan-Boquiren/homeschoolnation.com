@@ -8,96 +8,92 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin: 0 20% 1rem;
+    max-width: 50rem;
+    margin: 0 auto 1rem;
 }
 
-h2 {
-    font-family: var(--accent-font);
-    font-weight: normal;
-    color: var(--mustard-yellow);
-    font-size: 4rem;
-    text-align: center;
-    margin: 3rem auto;
+.headline {
+    margin-block: 3rem;
 }
 
-/* question wrapper */
-
-.question-wrapper {
+details {
     background-color: rgb(230, 230, 230);
-    padding: 1rem;
+    border: 2px solid rgb(204, 204, 204);
     border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    cursor: pointer;
+    padding: 1rem;
+    margin-inline: 2rem;
+    --time: 250ms;
 }
 
-.question-text {
+/* question */
+
+summary {
+    cursor: pointer;
     font-weight: 600;
     color: var(--teal);
     font-size: clamp(1rem, 2.5vw, 1.5rem);
+    position: relative;
 }
 
-.expand-btn {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin-left: auto;
+summary, .answer {
+    padding-left: 2rem;
 }
 
-.expand-btn .material-symbols-rounded {
-    color: var(--teal);
-    font-size: 2rem;
+
+/* list marker */
+
+summary::marker {content: ''}
+
+summary::before {
+    content: 'keyboard_arrow_right';
+    font-family: "Material Symbols Rounded";
+    font-size: clamp(1.6rem, 3vw, 2rem);;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    transition: transform var(--time) ease;
 }
 
-.expand-btn .material-symbols-rounded::selection {
-    background-color: transparent;
+details[open] summary::before {
+    transform: rotate(90deg);
 }
 
-/* answer wrapper */
+/* answer */
 
-.answer-wrapper {
-    margin-top: 0.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-
-.answer-text {
-    background-color: rgb(230, 230, 230);
-    padding: 1rem;
-    border-radius: 1rem;
+.answer {
+    padding-top: 1rem;
     font-family: var(--secondary-font);
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--charcoal);
-    max-width: unset;
+}
+
+details::details-content {
+    height: 0;
+    transition: height var(--time) ease, content-visibility var(--time) ease;
+    transition-behavior: allow-discrete;
+    overflow: hidden;
+}
+
+details[open]::details-content {
+    height: auto;
 }
 
 /* Other question */
 
 .other-question {
-    padding: 2rem;
-    margin: 1rem auto 2rem;
+    margin: 3rem;
     text-align: center;
-
-    h3 {
-        font-size: clamp(1.1rem, 2vw, 1.3rem);
-        font-weight: 500;
-        color: var(--charcoal);
-        text-wrap: balance;
-    }
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 500;
+    color: var(--charcoal);
+    text-wrap: balance;
 }
 
 /* Responsive Design */
 
 @media (max-width: 768px) {
-    h2 {
-        margin-top: 116px;
-    }
-}
-
-@media (max-width: 425px) {
-    #faq-container {
-        margin: 0 10% 2rem;
+    .headline {
+        margin-block: 7rem 3rem;
     }
 }

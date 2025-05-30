@@ -21,48 +21,10 @@ fetch("../articles/faq.json")
 function populateQuestions(categories) {
   Object.values(categories).forEach((category) => {
     category.forEach((pair) => {
-      faqContainer.innerHTML += `
-        <div class="faq-wrapper">
-            <div onclick="expandQuestion(this)" class="question-wrapper">
-                <h3 class="question-text">${pair.question}</h3>
-                <button class="expand-btn">
-                    <span class="material-symbols-rounded">keyboard_arrow_down</span>
-                </button>
-            </div>
-            <div class="answer-wrapper">
-                <p class="answer-text">${pair.answer}</p>
-            </div>
-        </div>
-      `;
+      faqContainer.innerHTML += `<details class="faq-wrapper" name="faq">
+          <summary class="question">${pair.question}</summary>
+          <p class="answer">${pair.answer}</p>
+        </details>`;
     });
   });
-}
-
-// question expand btn event listener
-function expandQuestion(btn) {
-  let questionWrapper = btn;
-  let expandBtn = questionWrapper.querySelector(".material-symbols-rounded");
-  let answerWrapper = questionWrapper.nextElementSibling;
-
-  document.querySelectorAll(".question-wrapper").forEach((wrapper) => {
-    if (
-      wrapper !== questionWrapper &&
-      wrapper.classList.contains("show-answer")
-    ) {
-      wrapper.classList.remove("show-answer");
-      wrapper.querySelector(".material-symbols-rounded").innerHTML =
-        "keyboard_arrow_down";
-      wrapper.nextElementSibling.style.maxHeight = "0px";
-    }
-  });
-
-  questionWrapper.classList.toggle("show-answer");
-
-  if (!questionWrapper.classList.contains("show-answer")) {
-    expandBtn.innerHTML = "keyboard_arrow_down";
-    answerWrapper.style.maxHeight = "0px";
-  } else {
-    expandBtn.innerHTML = "keyboard_arrow_up";
-    answerWrapper.style.maxHeight = `${answerWrapper.scrollHeight}px`;
-  }
 }

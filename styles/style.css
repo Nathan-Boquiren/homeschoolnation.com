@@ -26,6 +26,7 @@
 body {
     background-color: var(--soft-white);
     position: relative;
+    interpolate-size: allow-keywords;
 }
 
 h2, h3, h4 {
