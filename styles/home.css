@@ -714,6 +714,12 @@ section#bert .section-text .subheadline {
     }
 }
 
+@media (max-width: 425px) {
+    section#bert {gap: 0}
+    section#bert .section-images {height: auto}
+    section#bert .section-text {padding: 0 1rem}
+}
+
 /* Final CTA Section */
 section#final-cta-section {
     height: 100vh;
@@ -723,22 +729,15 @@ section#final-cta-section {
     flex-direction: column;
     position: relative;
     overflow-x: hidden;
-}
-
-section#final-cta-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
     background-color: var(--teal);
     clip-path: url(#wavyPath);
-    min-width: 45rem;
-    z-index: -1;
+    padding-top: 5rem;
 }
 
 section#final-cta-section .section-text {
     background-color: var(--mustard-yellow);
     padding: 50px 60px;
-    min-height: 350px;
+    min-height: 20rem;
     position: relative;
     border-radius: 10px;
     text-align: center;
@@ -793,7 +792,8 @@ section#final-cta-section .section-text .subheadline {
     color: var(--mustard-yellow);
 }
 
-section#final-cta-section .circle {
+section#final-cta-section::before, section#final-cta-section::after {
+    content: '';
     z-index: -1;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -801,14 +801,14 @@ section#final-cta-section .circle {
     background-color: var(--mustard-yellow);
 }
 
-section#final-cta-section .circle:nth-child(2) {
+section#final-cta-section::before {
     width: clamp(100px, 20%, 250px);
     bottom: 100px;
     left: 0;
     transform: translateX(-30%);
 }
 
-section#final-cta-section .circle:nth-child(3) {
+section#final-cta-section::after {
     width: clamp(100px, 20%, 300px);
     top: 200px;
     right: 0;
@@ -827,6 +827,14 @@ section#final-cta-section .circle:nth-child(3) {
     }
 }
 
+@media (max-width: 768px) {
+    section#final-cta-section {
+        clip-path: url(#wavyPathMobile);
+        height: 80vh;
+        padding-top: 0;
+    }
+}
+
 @media(max-width:425px) {
     section#final-cta-section .section-text {
         padding: 30px 10px;
@@ -840,7 +848,7 @@ section#final-cta-section .circle:nth-child(3) {
         font-size: 1rem;
     }
 
-    section#final-cta-section .circle {
+    #final-cta-section::before, #final-cta-section::after {
         display: none;
     }
 
