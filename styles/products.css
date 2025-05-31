@@ -289,17 +289,11 @@ footer {
 /* Responsive Design */
 
 @media (max-width: 768px) {
-    h2 {
-        margin-top: 10rem;
-    }
-
-    #product-gallery-container {
-        gap: 1rem;
-    }
+    h2 {margin-top: 10rem}
+    #product-gallery-container {gap: 1rem}
 }
 
 @media (max-width: 425px) {
-    .product-card {
-        border-radius: 0.5rem;
-    }
+    .product-card {border-radius: 0.5rem}
+    #product-gallery-container {padding-inline: 0}
 }
