@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((err) => console.error("Fetch error:", err));
 });
 
-const productCards = document.querySelectorAll(".product-card");
 const productInfoScreen = document.getElementById("product-info-screen");
 const productInfoImg = document.getElementById("product-img-wrapper");
 const productInfoName = document.getElementById("product-name");
