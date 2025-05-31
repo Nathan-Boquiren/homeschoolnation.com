@@ -1,6 +1,4 @@
-#title::after {
-    content: 'ORDER' !important;
-}
+#title::after {content: 'ORDER' !important}
 
 /* header */
 h2 {

@@ -1,6 +1,4 @@
-#title::after {
-    content: 'FAQs' !important;
-}
+#title::after {content: 'FAQs' !important}
 
 /* FAQ container */
 
@@ -12,9 +10,7 @@
     margin: 0 auto 1rem;
 }
 
-.headline {
-    margin-block: 3rem;
-}
+.headline {margin-block: 3rem}
 
 details {
     background-color: rgb(230, 230, 230);

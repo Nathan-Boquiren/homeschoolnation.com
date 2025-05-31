@@ -1,6 +1,4 @@
-#title::after {
-    content: 'PRODUCTS' !important;
-}
+#title::after {content: 'PRODUCTS' !important}
 
 .headline {
     margin-bottom: 2rem;

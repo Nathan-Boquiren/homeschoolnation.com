@@ -310,9 +310,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header {
-        padding: 1rem;
-    }
+    header {padding: 1rem}
 
     .header-wrapper {
         height: 5rem;
@@ -335,13 +333,8 @@ footer {
 }
 
 @media (max-width: 368px) {
-    .header-wrapper {
-        height: 100px;
-    }
-
-    #title::after {
-        display: none;
-    }
+    .header-wrapper {height: 100px}
+    #title::after {display: none}
 }
 
 @keyframes fadeIn {
@@ -368,10 +361,6 @@ footer {
     }
 }
 
-.animate-in {
-    animation: fadeIn 1s forwards;
-}
+.animate-in {animation: fadeIn 1s forwards}
 
-.animate-out {
-    animation: fadeOut 1s forwards;
-}
+.animate-out {animation: fadeOut 1s forwards}
