@@ -12,7 +12,8 @@
     grid-template-columns: repeat(auto-fit, clamp(250px, 40%, 300px));
     gap: 2rem;
     justify-content: center;
-    margin: 0 1rem 3rem;
+    margin-bottom: 3rem;
+    margin-inline: clamp(1rem, 7.5vw, 10rem);
 }
 
 /* article preview card */
@@ -82,8 +83,7 @@
     }
 }
 
-.article-prev-card:is(:hover, :active)
-:is(.article-title, .article-date, .prev-text) {
+.article-prev-card:is(:hover, :active) :is(.article-title, .article-date, .prev-text) {
     color: white;
 }
 
@@ -170,7 +170,27 @@
 /* Responsive Design */
 
 @media (max-width: 768px) {
-    .blog-container-header {margin: 8rem auto 3rem}
+    .headline {margin-block: 8rem 3rem}
+
+    .prev-text {
+        max-height: calc(5 * 1.5rem);
+        overflow: hidden;
+    }
+
+    .prev-text-wrapper {position: relative}
+
+    .prev-text-wrapper::after {
+        content: '';
+        position: absolute;
+        height: 1.5rem;
+        width: 100%;
+        bottom: 0;
+        pointer-events: none;
+        background: linear-gradient(to bottom, transparent, var(--soft-white));
+    }
+
+    .article-prev-card:is(:hover, :active) .prev-text-wrapper::after {display: none}
+
     #blog-article-container {margin-top: 7.25rem}
 
     #return-btn {

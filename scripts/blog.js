@@ -34,7 +34,9 @@ function populateArticleCards(data) {
           <span class="line"></span>
           <h3 class="article-title">${article.title}</h3>
           <p class="article-date">${article.date}</p>
-          <p class="prev-text">${article.preview_text}</p>
+          <div class="prev-text-wrapper">
+            <p class="prev-text">${article.preview_text}</p>
+          </div>
         </div>`;
   });
   articleListContainer.innerHTML = html;
