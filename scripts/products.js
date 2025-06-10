@@ -20,10 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      gallery.innerHTML = "";
+      populateGallery(data);
+    })
+    .catch((err) => console.error("Fetch error:", err));
+});
 
-      data.forEach((item) => {
-        gallery.innerHTML += `
+function populateGallery(data) {
+  gallery.innerHTML = "";
+
+  data.forEach((item) => {
+    gallery.innerHTML += `
           <div class="product-card" tabindex="0">
             <div class="img-wrapper">
               <img alt="${item.name}" loading="lazy" style="opacity:0.2">
@@ -32,23 +38,22 @@ document.addEventListener("DOMContentLoaded", () => {
               <h4 class="product-id">#${item.id}</h4>
               <hr>
               <h4 class="product-name">${item.name}</h4>
-          </div>
-        `;
-      });
+          </div>`;
+  });
 
-      data.forEach((item, idx) => {
-        const card = gallery.children[idx];
-        const img = card.querySelector("img");
-        img.src = `https://drive.google.com/thumbnail?id=${item.fileId}&sz=s1000`;
-        img.setAttribute("data-id", item.fileId);
-        img.onload = () => {
-          img.style.transition = "opacity 0.3s";
-          img.style.opacity = "1";
-        };
-      });
-    })
-    .catch((err) => console.error("Fetch error:", err));
-});
+  data.forEach((item, idx) => {
+    const card = gallery.children[idx];
+    const img = card.querySelector("img");
+    img.src = `https://drive.google.com/thumbnail?id=${item.fileId}&sz=s1000`;
+    img.setAttribute("data-id", item.fileId);
+    img.onload = () => {
+      img.style.transition = "opacity 0.3s";
+      img.style.opacity = "1";
+    };
+  });
+}
+
+let modalOpen = false;
 
 const productInfoScreen = document.getElementById("product-info-screen");
 const productInfoImg = document.getElementById("product-img-wrapper");
@@ -69,31 +74,25 @@ if (document.body.clientWidth <= 768) {
     productInfoImg.innerHTML = `<img class="lightbox-img" src='${imgLink}' alt="product image">`;
     productInfoName.innerHTML = name;
     productInfoId.innerHTML = id;
+    modalOpen = true;
     showInfoScreen();
   });
 
   document.body.addEventListener("click", (e) => {
     const lightBoxImg = document.querySelector(".lightbox-img");
     if (
-      lightBoxImg &&
-      !lightBoxImg.contains(e.target) &&
-      !e.target.closest(".product-card")
+      (lightBoxImg &&
+        !lightBoxImg.contains(e.target) &&
+        !e.target.closest(".product-card")) ||
+      closeBtn.contains(e.target)
     ) {
-      hideInfoScreen();
+      modalOpen = false;
+      showInfoScreen();
     }
-  });
-
-  closeBtn.addEventListener("click", () => {
-    hideInfoScreen();
   });
 }
 
 function showInfoScreen() {
-  document.body.style.overflow = "clip";
-  productInfoScreen.classList.add("show");
-}
-
-function hideInfoScreen() {
-  document.body.style.overflow = "auto";
-  productInfoScreen.classList.remove("show");
+  document.body.style.overflow = modalOpen === true ? "clip" : "auto";
+  productInfoScreen.classList.toggle("show");
 }
