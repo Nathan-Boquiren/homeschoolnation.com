@@ -95,9 +95,7 @@ h3 {
     background-color: transparent;
 }
 
-.contact-methods li h3 {
-    color: var(--mustard-yellow);
-}
+.contact-methods li h3 {color: var(--mustard-yellow)}
 
 .contact-methods li a {
     text-decoration: none;

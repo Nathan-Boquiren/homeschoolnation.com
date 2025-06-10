@@ -31,9 +31,7 @@ summary {
     position: relative;
 }
 
-summary, .answer {
-    padding-left: 2rem;
-}
+summary, .answer {padding-left: 2rem}
 
 
 /* list marker */
@@ -51,9 +49,7 @@ summary::before {
     transition: transform var(--time) ease;
 }
 
-details[open] summary::before {
-    transform: rotate(90deg);
-}
+details[open] summary::before {transform: rotate(90deg)}
 
 /* answer */
 
@@ -71,9 +67,7 @@ details::details-content {
     overflow: hidden;
 }
 
-details[open]::details-content {
-    height: auto;
-}
+details[open]::details-content {height: auto}
 
 /* Other question */
 
@@ -88,8 +82,4 @@ details[open]::details-content {
 
 /* Responsive Design */
 
-@media (max-width: 768px) {
-    .headline {
-        margin-block: 7rem 3rem;
-    }
-}
+@media (max-width: 768px) {.headline {margin-block: 7rem 3rem}}

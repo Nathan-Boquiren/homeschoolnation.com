@@ -50,9 +50,7 @@
     animation: shift 2s ease infinite;
 }
 
-.product-card.placeholder .img-wrapper {
-    background-image: none;
-}
+.product-card.placeholder .img-wrapper {background-image: none}
 
 .product-card.placeholder .img-wrapper::before {
     content: '';
@@ -62,9 +60,7 @@
     border-radius: 0.5rem;
 }
 
-.product-card.placeholder .info-wrapper {
-    background-color: transparent;
-}
+.product-card.placeholder .info-wrapper {background-color: transparent}
 
 .product-card.placeholder .info-wrapper h4 {
     width: fit-content;
@@ -82,12 +78,8 @@
 }
 
 @keyframes shift {
-    0% {
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-    100% {
-        transform: translate(30rem, 100%) rotate(45deg);
-    }
+    0% {transform: translate(-50%, -50%) rotate(45deg)}
+    100% {transform: translate(30rem, 100%) rotate(45deg)}
 }
 
 /* product cards */
@@ -165,7 +157,6 @@
     font-weight: 500;
     font-size: clamp(0.8rem, 2vw, 1.2rem);
     color: var(--charcoal);
-    
 }
 
 /* info screen lightbox */
@@ -181,14 +172,14 @@
     transition-timing-function: ease;
     transition-behavior: allow-discrete;
 
-    * {translate: 0 15vh}
+    & * {translate: 0 15vh}
 }
 
 #product-info-screen.show {
     display: block;
     opacity: 1;
 
-    * {translate: 0 0}
+    & * {translate: 0 0}
     
     @starting-style {
         opacity: 0;
@@ -207,13 +198,9 @@
     transition: all 0.2s ease;
 }
 
-.close-btn:is(:hover, :active) {
-    color: lightgrey;
-}
+.close-btn:is(:hover, :active) {color: lightgrey}
 
-.close-btn::selection {
-    background-color: transparent;
-}
+.close-btn::selection {background-color: transparent}
 
 #product-img-wrapper {
     position: absolute;
@@ -227,9 +214,7 @@
     width: clamp(10rem, 80%, 20rem);
 }
 
-#product-img-wrapper img {
-    width: 90%;
-}
+#product-img-wrapper img {width: 90%}
 
 .product-details-wrapper {
     position: absolute;
@@ -261,13 +246,9 @@
     font-size: 1.2rem;
 }
 
-#product-name::before {
-    content: "“";
-}
+#product-name::before {content: "“"}
 
-#product-name::after {
-    content: "”";
-}
+#product-name::after {content: "”"}
 
 #product-id {
     font-weight: 400;
@@ -280,9 +261,7 @@
 
 /* footer */
 
-footer {
-    background-color: #2a3741;
-}
+footer {background-color: #2a3741}
 
 /* Responsive Design */
 

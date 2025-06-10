@@ -26,9 +26,7 @@ section#hero #hero-content {
     text-align: left;
 }
 
-.hero-text-content > * {
-    margin-bottom: 2rem;
-}
+.hero-text-content > * {margin-bottom: 2rem}
 
 #hero-cta-btn {
     align-self: center;
@@ -42,13 +40,9 @@ section#hero #hero-content {
     animation: fadeIn 1.8s ease forwards;
 }
 
-#hero-cta-btn:hover {
-    background-color: var(--hover-mustard-yellow);
-}
+#hero-cta-btn:hover {background-color: var(--hover-mustard-yellow)}
 
-#hero-cta-btn:active {
-    transform: scale(95%);
-}
+#hero-cta-btn:active {transform: scale(95%)}
 
 .hero-img {
     height: 80vh;
@@ -66,21 +60,11 @@ section#hero #hero-content {
 }
 
 @keyframes fadeIn {
-    from {
-        translate: 0 -10px;
-        opacity: 0;
-    }
-    to {
-        translate: 0 0;
-        opacity: 1;
-    }
+    from {translate: 0 -10px; opacity: 0}
+    to {translate: 0 0; opacity: 1}
 }
 
-@media (max-width: 1024px) {
-    section#hero #hero-content {
-        padding: 100px 3rem;
-    }
-}
+@media (max-width: 1024px) {section#hero #hero-content {padding: 100px 3rem}}
 
 @media (max-width: 768px) {
     section#hero #hero-content {
@@ -109,9 +93,7 @@ section#hero #hero-content {
         text-align: center;
     }
 
-    #hero-cta-btn {
-        padding: 10px 30px;
-    }
+    #hero-cta-btn {padding: 10px 30px}
 
     .hero-img {
         min-width: 300px;
@@ -120,11 +102,8 @@ section#hero #hero-content {
     }
 }
 
-@media (max-width: 425px) {
-    section#hero .headline {
-        padding: 10px;
-    }
-}
+@media (max-width: 425px) {section#hero .headline {padding: 10px}}
+
 /* Youtube Video */
 
 section#video {
@@ -137,9 +116,7 @@ section#video {
     overflow-x: hidden;
 }
 
-#video .headline {
-    margin-bottom: 5%;
-}
+#video .headline {margin-bottom: 5%}
 
 #video iframe {
     width: clamp(300px, 80%, 1000px);
@@ -236,9 +213,7 @@ section#features .sub-headline {
     cursor: default;
 }
 
-.reason-card i::selection {
-    background-color: transparent;
-}
+.reason-card i::selection {background-color: transparent}
 
 .reason-card h4 {
     font-weight: 600;
@@ -246,13 +221,9 @@ section#features .sub-headline {
 }
 
 @media (max-width: 1024px) {
-    section#features {
-        margin-bottom: 50px;
-    }
+    section#features {margin-bottom: 50px}
 
-    .reasons-container {
-        height: fit-content;
-    }
+    .reasons-container {height: fit-content}
 
     .reason-card {
         margin: 10px;
@@ -288,9 +259,7 @@ section#leilani-art img {
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
 }
 
-.leilani-text {
-    text-align: left;
-}
+.leilani-text {text-align: left}
 
 .leilani-text h2 {
     font-family: var(--main-font);
@@ -318,12 +287,12 @@ section#leilani-art img {
         height: fit-content;
         padding: 30px 0;
     }
-    .leilani-text {
-        text-align: center;
-        p {
-            margin-right: 0;
-            max-width: 60ch;
-        }
+
+    .leilani-text {text-align: center}
+
+    .leilani-text p {
+        margin-right: 0;
+        max-width: 60ch;
     }
 }
 
@@ -357,9 +326,7 @@ section#product-gallery .sub-headline {
     gap: 1rem;
 }
 
-#images-container::-webkit-scrollbar {
-    display: none;
-}
+#images-container::-webkit-scrollbar {display: none}
 
 .img-card {
     width: 33.33%;
@@ -380,9 +347,7 @@ section#product-gallery .sub-headline {
     object-fit: contain;
 }
 
-.img-card img::selection {
-    background-color: transparent;
-}
+.img-card img::selection {background-color: transparent}
 
 .slider-nav-wrapper {
     display: flex;
@@ -400,9 +365,7 @@ section#product-gallery .sub-headline {
     cursor: pointer;
 }
 
-.slider-nav-wrapper button:hover, .slider-nav-wrapper button.active {
-    background-color: var(--teal);
-}
+.slider-nav-wrapper button :is(:hover, .active) {background-color: var(--teal)}
 
 .view-all-btn {
     margin-top: 1rem;
@@ -430,39 +393,21 @@ section#product-gallery .sub-headline {
 }
 
 @media (max-width: 768px) {
-    section#product-gallery {
-        gap: 0;
-    }
-
-    #first-set, #second-set {
-        display: none;
-    }
-
-    #images-container {
-        padding: 0 1rem;
-    }
+    section#product-gallery {gap: 0}
+    #first-set, #second-set {display: none}
+    #images-container {padding: 0 1rem}
 }
 
 @media (max-width: 425px) {
-    section#product-gallery {
-        height: 90vh;
-    }
+    section#product-gallery {height: 90vh}
 
-    .img-card {
-        min-width: 100%;
-    }
+    .img-card {min-width: 100%}
 
-    .img-card img {
-        max-width: 15rem;
-    }
+    .img-card img {max-width: 15rem}
 
-    #images-container {
-        z-index: 1;
-    }
+    #images-container {z-index: 1}
 
-    .slider-nav-wrapper {
-        margin-top: 1rem;
-    }
+    .slider-nav-wrapper {margin-top: 1rem}
 
     button.dot-btn {
         display: block;
@@ -489,9 +434,7 @@ section#social-proof .headline {
     font-size: clamp(2rem, 3vw, 3rem);
 }
 
-section#social-proof .sub-headline {
-    margin-bottom: 50px;
-}
+section#social-proof .sub-headline {margin-bottom: 50px}
 
 .testimonial-cards {
     display: flex;
@@ -526,6 +469,7 @@ section#social-proof .sub-headline {
     color: var(--charcoal);
     line-height: 1.5;
 }
+
 .testimonial-card h3 {
     line-height: 1.5;
     font-family: var(--main-font);
@@ -558,23 +502,14 @@ section#social-proof .sub-headline {
 .testimonial-card:nth-child(4) .tail {left: unset; right: 5rem}
 
 @media (max-width: 768px) {
-    .testimonial-cards {
-        width: 90%;
-    }
-
-    .testimonial-card {
-        gap: 10px;
-    }
+    .testimonial-cards {width: 90%}
+    .testimonial-card {gap: 10px}
 }
 
 @media (max-width: 425px) {
-    .testimonial-cards {
-        align-items: center;
-    }
+    .testimonial-cards {align-items: center}
 
-    .testimonial-card {
-        width: max(16rem, 75%);
-    }
+    .testimonial-card {width: max(16rem, 75%)}
 
     .tail, .testimonial-card:nth-child(3) .tail {
         transform: scale(0.8) rotate(45deg);
@@ -673,9 +608,7 @@ section#bert .section-text .subheadline {
         margin-left: 0;
     }
 
-    section#bert .section-images img.speech {
-        display: none;
-    }
+    section#bert .section-images img.speech {display: none}
 
     section#bert .section-images img.bert {
         height: auto;
@@ -699,9 +632,7 @@ section#bert .section-text .subheadline {
         text-align: center;
     }
 
-    section#bert .section-text p.subheadline {
-        font-size: 2.3rem;
-    }
+    section#bert .section-text p.subheadline {font-size: 2.3rem}
 
     section#bert .section-text p {
         margin-top: 20px;
@@ -709,9 +640,7 @@ section#bert .section-text .subheadline {
         font-size: 1rem;
     }
 
-    section#bert .section-text::before, section#bert .section-text::after {
-        display: none;
-    }
+    section#bert .section-text::before, section#bert .section-text::after {display: none}
 }
 
 @media (max-width: 425px) {
@@ -766,9 +695,7 @@ section#final-cta-section .section-text::after {
     transform: rotate(3deg);
 }
 
-#final-cta-section .section-text .headline {
-    color: var(--soft-white);
-}
+#final-cta-section .section-text .headline {color: var(--soft-white)}
 
 section#final-cta-section .section-text .subheadline {
     font-size: 1.5rem;
@@ -816,9 +743,7 @@ section#final-cta-section::after {
 }
 
 @media(max-width:1000px) {
-    section#final-cta-section .section-text {
-        width: 80%;
-    }
+    section#final-cta-section .section-text {width: 80%}
 
     section#final-cta-section .section-text .subheadline {
         font-size: 1.2rem;
@@ -836,21 +761,11 @@ section#final-cta-section::after {
 }
 
 @media(max-width:425px) {
-    section#final-cta-section .section-text {
-        padding: 30px 10px;
-    }
+    section#final-cta-section .section-text {padding: 30px 10px}
+    section#final-cta-section .section-text .headline {font-size: 2rem}
+    section#final-cta-section .section-text .subheadline {font-size: 1rem}
 
-    section#final-cta-section .section-text .headline {
-        font-size: 2rem;
-    }
-
-    section#final-cta-section .section-text .subheadline {
-        font-size: 1rem;
-    }
-
-    #final-cta-section::before, #final-cta-section::after {
-        display: none;
-    }
+    #final-cta-section::before, #final-cta-section::after {display: none}
 
     section#final-cta-section .section-text::before,
     section#final-cta-section .section-text::after {

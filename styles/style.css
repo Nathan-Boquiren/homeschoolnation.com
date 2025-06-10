@@ -29,29 +29,22 @@ body {
     interpolate-size: allow-keywords;
 }
 
-h2, h3, h4 {
-    text-wrap: balance;
-}
+h2, h3, h4, p {text-wrap: balance}
 
 p {
-    text-wrap: balance;
     max-width: 80ch;
     font-family: var(--secondary-font);
     line-height: 1.8;
 }
 
-p span, p strong {
-    font-family: var(--secondary-font);
-}
+p :is(span, strong) {font-family: inherit}
 
 a {
     text-decoration: none;
     color: inherit;
 }
 
-button {
-    cursor: pointer;
-}
+button {cursor: pointer}
 
 /* Header */
 
@@ -69,8 +62,7 @@ header {
     padding: 1.5rem;
     position: absolute;
     top: 0;
-    width: 100%;
-    left: 0;
+    inset-inline: 0;
 }
 
 header #title {
@@ -103,9 +95,7 @@ header #title::after {
     font-weight: 300;
 }
 
-.navbar-links li:is(:hover, :active) a {
-    color: var(--hover-mustard-yellow);
-}
+.navbar-links li:is(:hover, :active) a {color: var(--hover-mustard-yellow)}
 
 .navbar-links li a {
     color: var(--soft-white);
@@ -121,9 +111,7 @@ header #title::after {
     font-weight: 500;
 }
 
-.navbar-links li:last-child:hover a {
-    background-color: var(--hover-mustard-yellow);
-}
+.navbar-links li:last-child:hover a {background-color: var(--hover-mustard-yellow)}
 
 .hamburger {
     margin: 2vh 4vw;
@@ -187,16 +175,6 @@ header #title::after {
         z-index: 500;
     }
 
-    .navbar-links li:active {
-        font-weight: 500;
-    }
-
-    .navbar-links li a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-
     .navbar-links li:last-child a {
         background-color: unset;
         color: var(--soft-white);
@@ -206,7 +184,7 @@ header #title::after {
     }
 
     .navbar-links li:last-child:hover a {
-        background-color: transparent;
+        background: none;
     }
 
     .hamburger {
@@ -232,9 +210,7 @@ header #title::after {
 
     /* hamburger open style */
 
-    .navbar-links.open {
-        left: 0;
-    }
+    .navbar-links.open {left: 0}
 
     nav:has(.navbar-links.open) + #hamburger {
         transform: rotate(-90deg);
@@ -242,9 +218,8 @@ header #title::after {
     nav:has(.navbar-links.open) + #hamburger .line-1 {
         transform: translateY(9px) rotate(45deg);
     }
-    nav:has(.navbar-links.open) + #hamburger .line-2 {
-        width: 0px;
-    }
+    nav:has(.navbar-links.open) + #hamburger .line-2 {width: 0px}
+
     nav:has(.navbar-links.open) + #hamburger .line-3 {
         transform: translateY(-9px)rotate(-45deg);
     }
@@ -284,13 +259,9 @@ footer {
     border-radius: 5px;
 }
 
-.contact-wrapper span {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-}
+.contact-wrapper span {font-size: clamp(1.5rem, 3vw, 2rem)}
 
-.contact-wrapper span::selection {
-    background-color: transparent;
-}
+.contact-wrapper span::selection {background-color: transparent}
 
 .contact-wrapper:hover, .contact-wrapper:active {
     background-color: white;
@@ -322,9 +293,7 @@ footer {
         transition: all 0.5s ease;
     }
 
-    .header-wrapper.hidden {
-        top: -100%;
-    }
+    .header-wrapper.hidden {top: -100%}
 
     .footer-content {
         flex-direction: column;
@@ -338,27 +307,13 @@ footer {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity: 0; transform: translateY(20px)}
+    to {opacity: 1; transform: translateY(0)}
 }
 
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+    from {opacity: 1; transform: translateY(0)}
+    to {opacity: 0; transform: translateY(20px)}
 }
 
 .animate-in {animation: fadeIn 1s forwards}
