@@ -9,7 +9,7 @@ const navBar = document.querySelector(".navbar-links");
 const hamburger = document.getElementById("hamburger");
 const contactBtns = document.querySelectorAll(".contact-wrapper");
 
-document.addEventListener("click", (e) => {
+document.addEventListener("pointerdown", (e) => {
   const isHamburger = hamburger.contains(e.target);
   const isNavBar = navBar.contains(e.target);
 
