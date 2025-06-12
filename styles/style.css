@@ -91,6 +91,11 @@ header #title::after {
     color: var(--mustard-yellow);
 }
 
+@media (max-width: 368px) {
+    .header-wrapper {height: 100px}
+    #title::after {display: none}
+}
+
 /* ========== Nav Bar ========== */
 
 .navbar-links {
@@ -308,18 +313,9 @@ footer :is(p, span) {color: var(--soft-white)}
     margin: 1rem auto;
     align-items: center;
     cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
 }
-
-.contact-wrapper span {font-size: clamp(1.5rem, 3vw, 2rem)}
 
 .contact-wrapper span::selection {background-color: transparent}
-
-.contact-wrapper:hover, .contact-wrapper:active {
-    background-color: white;
-    color: var(--charcoal);
-}
 
 .footer-bottom {
     margin: 20px auto 0;
@@ -332,11 +328,6 @@ footer :is(p, span) {color: var(--soft-white)}
         flex-direction: column;
         align-items: center;
     }
-}
-
-@media (max-width: 368px) {
-    .header-wrapper {height: 100px}
-    #title::after {display: none}
 }
 
 /* ========== Buttons ========== */
