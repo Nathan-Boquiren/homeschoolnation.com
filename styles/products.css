@@ -1,17 +1,6 @@
 #title::after {content: 'PRODUCTS' !important}
 
-.headline {
-    margin-bottom: 2rem;
-    margin-inline: 1rem;
-}
-
-.yellow-line {
-    margin-inline: clamp(50px, 10%, 100rem);
-    height: 5px;
-    background-color: var(--mustard-yellow);
-    border: none;
-    border-radius: 100vmax;
-}
+.page-header {--clr: var(--mustard-yellow)}
 
 /* Gallery */
 
@@ -265,10 +254,7 @@ footer {background-color: #2a3741}
 
 /* Responsive Design */
 
-@media (max-width: 768px) {
-    h2 {margin-top: 10rem}
-    #product-gallery-container {gap: 1rem}
-}
+@media (max-width: 768px) {#product-gallery-container {gap: 1rem}}
 
 @media (max-width: 425px) {
     .product-card {border-radius: 0.5rem}

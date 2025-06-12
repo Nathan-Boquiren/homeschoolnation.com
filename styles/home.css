@@ -28,21 +28,7 @@ section#hero #hero-content {
 
 .hero-text-content > * {margin-bottom: 2rem}
 
-#hero-cta-btn {
-    align-self: center;
-    background-color: var(--mustard-yellow);
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 15px 50px;
-    border-radius: 100vmax;
-    animation: fadeIn 1.8s ease forwards;
-}
-
-#hero-cta-btn:hover {background-color: var(--hover-mustard-yellow)}
-
-#hero-cta-btn:active {transform: scale(95%)}
+.hero-text-content .btn {animation: fadeIn 1.8s ease forwards}
 
 .hero-img {
     height: 80vh;
@@ -88,12 +74,10 @@ section#hero #hero-content {
         text-align: center;
     }
 
-    .sub-headline, #hero-cta-btn {
+    .sub-headline {
         font-size: 1rem;
         text-align: center;
     }
-
-    #hero-cta-btn {padding: 10px 30px}
 
     .hero-img {
         min-width: 300px;
@@ -197,9 +181,7 @@ section#features .sub-headline {
 }
 
 .reason-card:nth-child(1) {background-color: var(--mustard-yellow)}
-
 .reason-card:nth-child(2) {background-color: var(--teal)}
-
 .reason-card:nth-child(3) {background-color: var(--charcoal)}
 
 .reason-card i {
@@ -250,29 +232,18 @@ section#leilani-art {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 20px;
+    gap: 20px;  
+    padding: 2rem;
 }
 
-section#leilani-art img {
-    align-self: center;
-    width: clamp(270px, 40vw, 430px);
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
-}
-
-.leilani-text {text-align: left}
+section#leilani-art img {width: clamp(270px, 40vw, 430px)}
 
 .leilani-text h2 {
     font-family: var(--main-font);
     font-weight: 700;
     letter-spacing: 0px;
     font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: var(--soft-white);
     margin-bottom: 1rem;
-}
-
-.leilani-text p {
-    color: var(--soft-white);
-    margin-right: 1rem;
 }
 
 .leilani-text p.leilani-name {
@@ -285,15 +256,9 @@ section#leilani-art img {
     section#leilani-art {
         flex-wrap: wrap;
         height: fit-content;
-        padding: 30px 0;
     }
 
     .leilani-text {text-align: center}
-
-    .leilani-text p {
-        margin-right: 0;
-        max-width: 60ch;
-    }
 }
 
 /* Product Gallery Section */
@@ -366,22 +331,6 @@ section#product-gallery .sub-headline {
 }
 
 .slider-nav-wrapper button:is(:hover, .active) {background-color: var(--teal)}
-
-.view-all-btn {
-    margin-top: 1rem;
-    color: var(--mustard-yellow);
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: 2px solid var(--mustard-yellow);
-    border-radius: 100vmax;
-    background-color: transparent;
-}
-
-.view-all-btn:hover {
-    background-color: var(--mustard-yellow);
-    color: var(--soft-white);
-}
 
 /* mobile nav bot btns */
 .dot-btn {
@@ -465,10 +414,7 @@ section#social-proof .sub-headline {margin-bottom: 50px}
     margin-bottom: auto;
 }
 
-.testimonial-card p {
-    color: var(--charcoal);
-    line-height: 1.5;
-}
+.testimonial-card p {line-height: 1.5}
 
 .testimonial-card h3 {
     line-height: 1.5;
@@ -582,11 +528,7 @@ section#bert .section-text::after {
     left: -20px;
 }
 
-section#bert .section-text p {
-    color: var(--charcoal);
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    text-wrap: pretty;
-}
+section#bert .section-text p {font-size: clamp(1rem, 3vw, 1.2rem)}
 
 section#bert .section-text .headline {
     text-align: left;
@@ -665,12 +607,17 @@ section#final-cta-section {
 
 section#final-cta-section .section-text {
     background-color: var(--mustard-yellow);
-    padding: 50px 60px;
+    padding: 3rem 4rem;
     min-height: 20rem;
     position: relative;
-    border-radius: 10px;
+    border-radius: 1rem;
     text-align: center;
     color: var(--soft-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 section#final-cta-section .section-text::before,
@@ -700,23 +647,6 @@ section#final-cta-section .section-text::after {
 section#final-cta-section .section-text .subheadline {
     font-size: 1.5rem;
     font-weight: 600;
-}
-
-.products-link-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--soft-white);
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: 2px solid var(--soft-white);
-    border-radius: 100vmax;
-    background-color: transparent;
-}
-
-.products-link-btn:hover {
-    background-color: var(--soft-white);
-    color: var(--mustard-yellow);
 }
 
 section#final-cta-section::before, section#final-cta-section::after {

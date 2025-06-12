@@ -28,15 +28,20 @@ body {
     interpolate-size: allow-keywords;
 }
 
-/* Typography */
+/* ========== Typography ========== */
 
 h2, h3, h4 {text-wrap: balance}
 
 p {
-    max-width: 80ch;
+    max-width: 60ch;
     font-family: var(--secondary-font);
+    color: var(--charcoal);
     line-height: 1.8;
     text-wrap: pretty;
+}
+
+.white-txt {
+    color: var(--soft-white);
 }
 
 p :is(span, strong) {font-family: inherit}
@@ -48,7 +53,7 @@ a {
 
 button {cursor: pointer}
 
-/* Header */
+/* ========== Header ========== */
 
 .header-wrapper {
     background-color: #2a3741;
@@ -86,6 +91,8 @@ header #title::after {
     color: var(--mustard-yellow);
 }
 
+/* ========== Nav Bar ========== */
+
 .navbar-links {
     display: flex;
     gap: 2rem;
@@ -115,6 +122,8 @@ header #title::after {
 
 .navbar-links li:last-child:hover a {background-color: var(--hover-mustard-yellow)}
 
+/* ========== Hamburger ========== */
+
 .hamburger {
     margin: 2vh 4vw;
     display: none;
@@ -122,6 +131,9 @@ header #title::after {
 }
 
 @media (max-width: 768px) {
+
+    main:not(#home-page) {margin-top: 6rem}
+
     header {
         justify-content: flex-end;
         padding: 1rem;
@@ -220,7 +232,7 @@ header #title::after {
     }
 }
 
-/* Section headers */
+/* ========== Section headers ========== */
 
 .headline {
     font-size: clamp(3rem, 6vw, 5rem);
@@ -241,14 +253,39 @@ header #title::after {
     animation: fadeIn 1.4s ease forwards;
 }
 
-/* Footer */
+/* ========== Page Headers ========== */
+
+.page-header > * {margin-bottom: 1.5rem}
+
+.page-header h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-family: var(--accent-font);
+    animation: fadeIn 1s ease forwards;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    color: var(--clr);
+}
+
+.page-header .line {
+    border: none;
+    width: 80%;
+    margin-inline: auto;
+    height: 5px;
+    background-color: var(--clr);
+    border-radius: 100vmax;
+}
+
+/* ========== Footer ========== */
+
 footer {
     background-color: var(--charcoal);
-    color: var(--soft-white);
     padding: 40px 20px;
     text-align: center;
     font-family: var(--secondary-font);
 }
+
+footer :is(p, span) {color: var(--soft-white)}
 
 .footer-content {
     display: flex;
@@ -284,15 +321,9 @@ footer {
     color: var(--charcoal);
 }
 
-.contact-wrapper p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
 .footer-bottom {
     margin: 20px auto 0;
     font-size: 0.9rem;
-    color: var(--soft-white);
     display: inline-block;
 }
 
@@ -303,11 +334,42 @@ footer {
     }
 }
 
-
 @media (max-width: 368px) {
     .header-wrapper {height: 100px}
     #title::after {display: none}
 }
+
+/* ========== Buttons ========== */
+
+.btn {
+    --outline: var(--mustard-yellow);
+    --hover: var(--soft-white);
+    color: var(--outline);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 600;
+    padding: 10px 2rem;
+    border: 2px solid var(--outline);
+    border-radius: 100vmax;
+    background-color: transparent;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--outline);
+    color: var(--hover);
+}
+
+.btn.white {
+    --outline: var(--soft-white);
+    --hover: var(--mustard-yellow);
+}
+
+.btn.teal {
+    --outline: var(--teal);
+    --hover: var(--soft-white);
+}
+
+/* ========== Animations ========== */
 
 @keyframes fadeIn {
     from {opacity: 0; transform: translateY(20px)}

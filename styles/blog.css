@@ -1,9 +1,6 @@
 #title::after {content: 'BLOG' !important}
 
-.headline {
-    color: var(--teal);
-    margin-block: 3rem;
-}
+.page-header {--clr: var(--teal)}
 
 /* blog lists container */
 
@@ -118,32 +115,13 @@
     color: var(--teal);
 }
 
-#article-content p {
-    font-size: clamp(1rem, 3vw, 1.3rem);
-    line-height: 1.8;
-    color: var(--charcoal);
-}
+#article-content p {font-size: clamp(1rem, 3vw, 1.3rem)}
 
-.blog-section {
-    opacity: 0;
-    text-wrap: pretty;
-}
+.blog-section {opacity: 0}
 
 #return-btn {
     margin-left: auto;
-    background-color: transparent;
-    color: var(--mustard-yellow);
-    font-weight: 500;
-    font-size: 1.1rem;
-    border: 2px solid var(--mustard-yellow);
-    padding: 10px 2rem;
-    border-radius: 100vmax;
     cursor: pointer;
-}
-
-#return-btn:is(:hover, :active) {
-    background-color: var(--mustard-yellow);
-    color: white;
 }
 
 /* Fade Animations */

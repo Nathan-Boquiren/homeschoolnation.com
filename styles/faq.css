@@ -1,5 +1,7 @@
 #title::after {content: 'FAQs' !important}
 
+.page-header {--clr: var(--mustard-yellow)}
+
 /* FAQ container */
 
 #faq-container {
@@ -9,8 +11,6 @@
     max-width: 50rem;
     margin: 0 auto 1rem;
 }
-
-.headline {margin-block: 3rem}
 
 details {
     background-color: rgb(230, 230, 230);
@@ -33,7 +33,6 @@ summary {
 
 summary, .answer {padding-left: 2rem}
 
-
 /* list marker */
 
 summary::marker {content: ''}
@@ -55,9 +54,7 @@ details[open] summary::before {transform: rotate(90deg)}
 
 .answer {
     padding-top: 1rem;
-    font-family: var(--secondary-font);
     font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--charcoal);
 }
 
 details::details-content {
