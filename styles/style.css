@@ -357,6 +357,13 @@ footer :is(p, span) {color: var(--soft-white)}
 .btn:hover {
     background-color: var(--outline);
     color: var(--hover);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 0 -1px hsl(from var(--outline) h s calc(l - 10));
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 .btn.white {
