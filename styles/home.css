@@ -365,7 +365,7 @@ section#product-gallery .sub-headline {
     cursor: pointer;
 }
 
-.slider-nav-wrapper button :is(:hover, .active) {background-color: var(--teal)}
+.slider-nav-wrapper button:is(:hover, .active) {background-color: var(--teal)}
 
 .view-all-btn {
     margin-top: 1rem;
