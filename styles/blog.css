@@ -70,13 +70,18 @@
 .article-prev-card:is(:hover, :active) .fill-animation {animation: fillIn 0.6s ease forwards}
 
 @keyframes fillIn {
-    from {clip-path: circle(0% at var(--circle-x, 50%) var(--circle-y, 50%))}
-    to {clip-path: circle(150% at var(--circle-x, 50%) var(--circle-y, 50%))}
+    from {clip-path: circle(0% at var(--circle-x, 50%) var(--circle-y, 50%)); opacity: 0;}
+    to {clip-path: circle(150% at var(--circle-x, 50%) var(--circle-y, 50%)); opacity: 1;}
 }
 
-.article-prev-card:is(:hover, :active) :is(.article-title, .article-date, .prev-text) {
-    color: white;
+.article-prev-card.clear .fill-animation {animation: clear 0.4s ease forwards}
+
+@keyframes clear {
+    from {clip-path: circle(150% at var(--circle-x, 50%) var(--circle-y, 50%)); opacity: 1;}
+    to {clip-path: circle(0% at var(--circle-x) var(--circle-y)); opacity: 0;}
 }
+
+.article-prev-card:is(:hover, :active) :is(.article-title, .article-date, .prev-text) {color: white}
 
 .article-prev-card:is(:hover, :active) .line {
     background-color: white;

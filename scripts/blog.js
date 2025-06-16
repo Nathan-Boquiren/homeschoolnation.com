@@ -61,10 +61,8 @@ function populateArticleCards(data) {
     });
 
     card.addEventListener("mouseleave", () => {
-      card.style.setProperty("--circle-x", "50%");
-      card.style.setProperty("--circle-y", "50%");
-      const fillAnimation = card.querySelector(".fill-animation");
-      fillAnimation.style.clipPath = "circle(0% at 50% 50%)";
+      card.classList.add("clear");
+      setTimeout(() => card.classList.remove("clear"), 400);
     });
   });
 }
