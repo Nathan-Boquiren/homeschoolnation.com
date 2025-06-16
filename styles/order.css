@@ -52,18 +52,14 @@ h3 {
 }
 
 .temp-browse-btn {
-    background-color: var(--mustard-yellow);
-    color: white;
-    text-decoration: none;
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    width: fit-content;
-    padding: 0.75rem 1.5rem;
-    border-radius: 100vmax;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 
-.temp-browse-btn:is(:hover, :active, :focus) {
-    background-color: var(--hover-mustard-yellow);
+.temp-browse-btn::after {
+    content: 'arrow_forward';
+    font-family: 'Material Symbols Rounded';
 }
 
 /* Contact info section */
