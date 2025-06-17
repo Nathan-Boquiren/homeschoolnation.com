@@ -7,14 +7,14 @@
 #faq-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
     max-width: 50rem;
     margin: 0 auto 1rem;
 }
 
 details {
-    background-color: rgb(230, 230, 230);
-    border: 2px solid rgb(204, 204, 204);
+    background-color: rgb(242 242 242);
+    box-shadow: inset 2px 2px 5px rgb(0 0 0 / .1);
     border-radius: 1rem;
     padding: 1rem;
     margin-inline: 2rem;
@@ -31,24 +31,24 @@ summary {
     position: relative;
 }
 
-summary, .answer {padding-left: 2rem}
+summary, .answer {padding-right: 2rem}
 
 /* list marker */
 
 summary::marker {content: ''}
 
 summary::before {
-    content: 'keyboard_arrow_right';
+    content: 'keyboard_arrow_down';
     font-family: "Material Symbols Rounded";
     font-size: clamp(1.6rem, 3vw, 2rem);;
     font-weight: 400;
     position: absolute;
-    left: 0;
+    right: 0;
     top: -5px;
     transition: transform var(--time) ease;
 }
 
-details[open] summary::before {transform: rotate(90deg)}
+details[open] summary::before {transform: rotate(180deg)}
 
 /* answer */
 

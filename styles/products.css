@@ -20,7 +20,6 @@
 .product-card.placeholder {
     background-color: #eeeeee;
     box-shadow: none;
-    cursor: pointer;
     position: relative;
     overflow: hidden;
     user-select: none;
