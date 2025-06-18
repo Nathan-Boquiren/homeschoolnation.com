@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
 /* Hero Section */
-section#hero {
-    background-image: url(../imgs/chalkboard-bg.webp);
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+section#hero {background: url(../imgs/chalkboard-bg.webp) top / cover no-repeat}
 
 section#hero #hero-content {
     display: flex;
@@ -371,9 +366,7 @@ section#social-proof {
     flex-direction: column;
     align-items: center;
     padding-block: 4rem 8rem;
-    background-image: radial-gradient(circle, #36454f, #2b3840, #1f2b35);
-    background-position: center;
-    background-size: cover;
+    background: radial-gradient(circle, #36454f, #1f2b35) center / cover no-repeat;
 }
 
 section#social-proof .headline {
