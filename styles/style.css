@@ -106,10 +106,10 @@ header #title::after {
 .navbar-links li {
     list-style: none;
     font-family: var(--secondary-font);
-    font-weight: 300;
+    font-weight: 400;
 }
 
-.navbar-links li:is(:hover, :active) a {color: var(--hover-mustard-yellow)}
+.navbar-links li:is(:hover, :active) a {color: var(--mustard-yellow)}
 
 .navbar-links li a {
     color: var(--soft-white);
