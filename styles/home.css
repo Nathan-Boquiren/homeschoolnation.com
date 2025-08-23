@@ -8,6 +8,7 @@ section#hero #hero-content {
     align-items: center;
     padding: 100px 7.5rem;
     position: relative;
+    -webkit-backdrop-filter: brightness(0.7);
     backdrop-filter: brightness(0.7);
 }
 
@@ -280,17 +281,24 @@ section#product-gallery .sub-headline {
     height: 300px;
     position: relative;
     display: flex;
+    gap: 1rem;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    gap: 1rem;
+    scroll-marker-group: after;
+}
+
+#images-container::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 2rem;
 }
 
 #images-container::-webkit-scrollbar {display: none}
 
 .img-card {
-    width: 33.33%;
-    min-width: 300px;
+    flex: 0 1 33.33%;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -301,6 +309,19 @@ section#product-gallery .sub-headline {
     scroll-snap-align: center;
 }
 
+.img-card::scroll-marker {
+    content: '';
+    height: 1rem;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: 2px solid var(--teal);
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.img-card::scroll-marker:hover {background-color: var(--teal)}
+.img-card::scroll-marker:target-current {background-color: var(--teal)}
+
 .img-card img {
     width: 100%;
     height: 100%;
@@ -309,50 +330,20 @@ section#product-gallery .sub-headline {
 
 .img-card img::selection {background-color: transparent}
 
-.slider-nav-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.slider-nav-wrapper button {
-    height: 10px;
-    width: 3rem;
-    border-radius: 100vmax;
-    background-color: transparent;
-    border: 2px solid var(--teal);
-    cursor: pointer;
-}
-
-.slider-nav-wrapper button:is(:hover, .active) {background-color: var(--teal)}
-
-/* mobile nav bot btns */
-.dot-btn {
-    width: 10px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background-color: var(--teal);
-    display: none;
-}
-
 @media (max-width: 768px) {
     section#product-gallery {gap: 0}
-    #first-set, #second-set {display: none}
     #images-container {padding: 0 1rem}
+    #images-container::scroll-marker-group {
+        margin-block: 1rem 2rem;
+    }
 }
 
 @media (max-width: 425px) {
     section#product-gallery {height: 90vh}
-
     .img-card {min-width: 100%}
-
     .img-card img {max-width: 15rem}
-
     #images-container {z-index: 1}
-
     .slider-nav-wrapper {margin-top: 1rem}
-
     button.dot-btn {
         display: block;
         width: 1rem;
