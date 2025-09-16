@@ -15,7 +15,7 @@ for (let i = 0; i < 12; i++) {
 // fetch product data
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://hs-nation-imgs-backend.onrender.com/images", {
+  fetch("https://script.google.com/macros/s/AKfycbzqTCRbgA_hi0xGJUrSje5RN8qHYeM4sKqbirRjj7f2D5Io2IatZ4I6fL39-EPEF0hY/exec", {
     cache: "no-store",
   })
     .then((res) => res.json())
@@ -44,7 +44,7 @@ function populateGallery(data) {
   data.forEach((item, idx) => {
     const card = gallery.children[idx];
     const img = card.querySelector("img");
-    img.src = `https://drive.google.com/thumbnail?id=${item.fileId}&sz=s1000`;
+    img.src = item.imgUrl;
     img.setAttribute("data-id", item.fileId);
     img.onload = () => {
       img.style.transition = "opacity 0.3s";
@@ -80,12 +80,7 @@ if (document.body.clientWidth <= 768) {
 
   document.body.addEventListener("click", (e) => {
     const lightBoxImg = document.querySelector(".lightbox-img");
-    if (
-      (lightBoxImg &&
-        !lightBoxImg.contains(e.target) &&
-        !e.target.closest(".product-card")) ||
-      closeBtn.contains(e.target)
-    ) {
+    if ((lightBoxImg && !lightBoxImg.contains(e.target) && !e.target.closest(".product-card")) || closeBtn.contains(e.target)) {
       modalOpen = false;
       showInfoScreen();
     }
